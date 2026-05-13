@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Simon Gathariki — Backend Engineer & Technical Lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink: #0d0f14;
+    --paper: #f5f2eb;
+    --cream: #ede9df;
+    --accent: #c84b2f;
+    --accent2: #2f6bc8;
+    --muted: #6b6760;
+    --border: #d4cfc6;
+    --card: #ffffff;
+    --nav-bg: rgba(245,242,235,0.88);
+    --exp-bg: #0d0f14;
+    --exp-color: #f5f2eb;
+    --exp-border: rgba(255,255,255,0.1);
+    --exp-muted: rgba(255,255,255,0.65);
+    --exp-bright: rgba(255,255,255,0.9);
+  }
+
+  [data-theme="dark"] {
+    --ink: #e8e4db;
+    --paper: #111318;
+    --cream: #1a1d24;
+    --accent: #e05c3a;
+    --accent2: #4a8de0;
+    --muted: #8a8680;
+    --border: #2a2d35;
+    --card: #181b22;
+    --nav-bg: rgba(17,19,24,0.9);
+    --exp-bg: #0a0c10;
+    --exp-color: #e8e4db;
+    --exp-border: rgba(255,255,255,0.08);
+    --exp-muted: rgba(232,228,219,0.6);
+    --exp-bright: rgba(232,228,219,0.92);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  .nav-right { display: flex; align-items: center; gap: 2.5rem; }
+
+  /* ── DARK MODE TOGGLE ── */
+  .theme-toggle {
+    background: none;
+    border: 1.5px solid var(--border);
+    border-radius: 2px;
+    padding: 0.3rem 0.65rem;
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s;
+  }
+  .theme-toggle:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .theme-toggle .toggle-icon { font-size: 0.85rem; line-height: 1; }
+
+  .nav-logo {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
+  }
+
+  .hero-left {
+    padding: 6rem 4rem 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .hero-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.1s forwards;
+  }
+
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.2s forwards;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 42ch;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.35s forwards;
+  }
+
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.7s 0.5s forwards;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.22s;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    border: 1.5px solid var(--ink);
+  }
+  .btn-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+  .btn-outline:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .hero-right {
+    padding: 6rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeLeft 0.6s forwards;
+  }
+  .stat-card:nth-child(1) { animation-delay: 0.3s; }
+  .stat-card:nth-child(2) { animation-delay: 0.45s; }
+  .stat-card:nth-child(3) { animation-delay: 0.6s; }
+  .stat-card:nth-child(4) { animation-delay: 0.75s; }
+
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--accent);
+  }
+
+  .stat-label {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 6rem 6rem; }
+  section + section { border-top: 1px solid var(--border); }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 3rem;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .about-body {
+    font-size: 1.05rem;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about-body strong { color: var(--ink); }
+
+  .about-meta { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .meta-item {
+    border-left: 3px solid var(--accent);
+    padding-left: 1.25rem;
+  }
+
+  .meta-item .meta-key {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .meta-item .meta-val {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--exp-bg); color: var(--exp-color); transition: background 0.3s ease; }
+  #experience .section-label { color: #c84b2f; }
+  #experience .section-title { color: var(--exp-color); }
+
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--exp-border);
+  }
+
+  .timeline-item:last-child { border-bottom: 1px solid var(--exp-border); }
+
+  .tl-meta { padding-top: 0.2rem; }
+
+  .tl-period {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.5rem;
+  }
+
+  .tl-company {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--exp-bright);
+    margin-bottom: 0.25rem;
+  }
+
+  .tl-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.65rem;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+  }
+
+  .tl-role {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: var(--exp-color);
+    margin-bottom: 1rem;
+  }
+
+  .tl-points { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .tl-points li {
+    font-size: 0.92rem;
+    color: var(--exp-muted);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.55;
+  }
+
+  .tl-points li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+  }
+
+  .tl-highlight {
+    color: var(--exp-bright) !important;
+    font-weight: 500;
+  }
+
+  /* ── SKILLS ── */
+  #skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .skill-groups { display: flex; flex-direction: column; gap: 2.5rem; }
+
+  .skill-group-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .tag {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
+    font-family: 'IBM Plex Mono', monospace;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--ink);
+    background: var(--card);
+    transition: all 0.18s;
+  }
+  .tag:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  .tag.core {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  .skills-right { display: flex; flex-direction: column; gap: 2rem; }
+
+  .perf-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+  }
+
+  .perf-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .perf-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem;
+  }
+  .perf-metric:last-child { border-bottom: none; }
+  .perf-metric .before { color: var(--muted); }
+  .perf-metric .after { font-weight: 600; color: var(--accent); }
+  .perf-metric .arrow { color: var(--border); font-size: 0.8rem; }
+
+  /* ── PROJECTS ── */
+  #projects .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 1.5px solid var(--border);
+  }
+
+  .project-card {
+    background: var(--card);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: background 0.2s;
+  }
+  .project-card:hover { background: var(--cream); }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: opacity 0.2s;
+  }
+  .project-link:hover { opacity: 0.7; }
+  .project-link::after { content: ' ↗'; }
+
+  .project-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+  }
+
+  .project-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+
+  .project-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+
+  .ptag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.5rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--muted);
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  #contact .section-title { font-size: clamp(2.5rem, 4vw, 4rem); }
+
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .contact-link:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .contact-link:hover .cl-icon { color: var(--accent); }
+
+  .cl-icon {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    min-width: 3.5rem;
+    transition: color 0.2s;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2rem 6rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Scroll-reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.72rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 7rem 1.75rem 2.5rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .hero-right { padding: 2.5rem 1.75rem 4rem; }
+    section { padding: 4rem 1.75rem; }
+    #about, #skills, #contact { grid-template-columns: 1fr; gap: 3rem; }
+    #experience { padding: 4rem 1.75rem; }
+    .timeline-item { grid-template-columns: 1fr; gap: 0.75rem; }
+    #projects .projects-grid { grid-template-columns: 1fr; }
+    .project-card { padding: 2rem; }
+    footer { padding: 1.5rem 1.75rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .nav-right { gap: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">SG — Portfolio</span>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="toggle-icon">☀︎</span>
+      <span class="toggle-label">LIGHT</span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-tag">Backend Engineer &amp; Technical Lead · Nairobi, Kenya</p>
+    <h1 class="hero-name">
+      Simon<br/>
+      <em>Gathariki</em>
+    </h1>
+    <p class="hero-desc">
+      Building scalable backend systems, distributed pipelines, and high-availability APIs
+      that deliver real business impact — end-to-end ownership, cross-timezone collaboration.
+    </p>
+    <div class="hero-cta">
+      <a href="#experience" class="btn btn-primary">View Experience</a>
+      <a href="mailto:sgatharikih@gmail.com" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-card">
+      <span class="stat-num">5+</span>
+      <span class="stat-label">Years building &amp; operating<br/>production backend systems</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">4×</span>
+      <span class="stat-label">Transaction throughput increase<br/>(&lt;1K → 4,333 TPM)</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">96%</span>
+      <span class="stat-label">Latency reduction<br/>(30 min → &lt;50 sec TAT)</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">6+</span>
+      <span class="stat-label">Cross-border payment corridors<br/>designed &amp; integrated</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <p class="section-label">01 — About</p>
+    <h2 class="section-title reveal">Engineering systems<br/>that hold under pressure</h2>
+    <div class="about-body reveal">
+      <p>I'm a Software Engineer and Technical Lead with over five years of experience designing backend systems, distributed architectures, and data pipelines that run reliably in production.</p>
+      <p>My work spans <strong>payment infrastructure, AML compliance platforms, observability systems, and API gateways</strong> — always with a focus on measurable performance, maintainability, and cross-functional clarity.</p>
+      <p>I'm comfortable owning systems from design to deployment, driving architectural decisions, and communicating complex tradeoffs to product and business stakeholders alike.</p>
+    </div>
+  </div>
+  <div class="about-meta reveal">
+    <div class="meta-item">
+      <p class="meta-key">Current Role</p>
+      <p class="meta-val">Technical Lead — Scytale Systems</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-key">Specialisation</p>
+      <p class="meta-val">Backend Systems · Distributed Architecture · Platform Engineering</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-key">Core Stack</p>
+      <p class="meta-val">Java · Spring Boot · Node.js · Kafka · PostgreSQL · AWS/GCP</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-key">Education</p>
+      <p class="meta-val">BSc Information Technology — Kirinyaga University</p>
+    </div>
+    <div class="meta-item">
+      <p class="meta-key">Location</p>
+      <p class="meta-val">Nairobi, Kenya · Open to remote &amp; distributed teams</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">02 — Experience</p>
+  <h2 class="section-title reveal">Where I've built things</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <div class="tl-meta">
+        <p class="tl-period">Oct 2025 — Present</p>
+        <p class="tl-company">Scytale Systems</p>
+        <span class="tl-badge">Current</span>
+      </div>
+      <div class="tl-content">
+        <h3 class="tl-role">Technical Lead</h3>
+        <ul class="tl-points">
+          <li class="tl-highlight">Leading architecture of a full-stack AML compliance platform: screening, transaction monitoring, risk scoring, investigations &amp; regulatory reporting.</li>
+          <li>Designing the core AML rules engine and alerting workflows for financial crime detection.</li>
+          <li>Building real-time and batch ETL pipelines for large-scale financial data processing and analytics.</li>
+          <li>Driving cross-functional collaboration across QA, product, and business teams to deliver a production-ready compliance platform.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="tl-meta">
+        <p class="tl-period">Feb 2023 — Apr 2025</p>
+        <p class="tl-company">SwitchLink Africa</p>
+        <span class="tl-badge">2 yrs</span>
+      </div>
+      <div class="tl-content">
+        <h3 class="tl-role">Software Engineer</h3>
+        <ul class="tl-points">
+          <li class="tl-highlight">Increased transaction throughput from &lt;1,000 to 4,333 TPM; reduced worst-case TAT from 30 minutes to &lt;50 seconds.</li>
+          <li>Architected and deployed an OpenSearch-based observability platform, replacing Dynatrace and significantly reducing monitoring costs.</li>
+          <li>Led API gateway migration from Javalin to Spring, improving performance, reliability and scalability at scale.</li>
+          <li>Designed and implemented cross-border payment integrations across Ethiopia, Tanzania, Uganda, India, Japan, and China.</li>
+          <li>Delivered new mobile money integrations expanding regional payout capabilities across East Africa.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="tl-meta">
+        <p class="tl-period">Apr 2021 — Aug 2022</p>
+        <p class="tl-company">University of Embu</p>
+        <span class="tl-badge">Developer + Lecturer</span>
+      </div>
+      <div class="tl-content">
+        <h3 class="tl-role">Software Developer &amp; Part-time Lecturer</h3>
+        <ul class="tl-points">
+          <li>Built internal platforms: contract management, student onboarding, leave tracking, and LMS analytics.</li>
+          <li>Supported Moodle e-learning infrastructure and improved system reliability and reporting.</li>
+          <li>Taught Introduction to Cloud Computing and Desktop Publishing to undergraduate students.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="tl-meta">
+        <p class="tl-period">Jul 2018 — Oct 2020</p>
+        <p class="tl-company">Rivest Enterprises</p>
+        <span class="tl-badge">Early career</span>
+      </div>
+      <div class="tl-content">
+        <h3 class="tl-role">Software Developer</h3>
+        <ul class="tl-points">
+          <li>Developed a mobile payment application for a trading platform.</li>
+          <li>Implemented school management systems, improving operational efficiency and real-time communication.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div>
+    <p class="section-label">03 — Skills</p>
+    <h2 class="section-title reveal">Technical Stack</h2>
+    <div class="skill-groups reveal">
+      <div>
+        <p class="skill-group-label">Backend &amp; Systems</p>
+        <div class="skill-tags">
+          <span class="tag core">Java</span>
+          <span class="tag core">Spring Boot</span>
+          <span class="tag core">Node.js</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Microservices</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-group-label">Distributed Systems &amp; Messaging</p>
+        <div class="skill-tags">
+          <span class="tag core">Apache Kafka</span>
+          <span class="tag">RabbitMQ</span>
+          <span class="tag">Event-driven Architecture</span>
+          <span class="tag">ETL Pipelines</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-group-label">Cloud &amp; DevOps</p>
+        <div class="skill-tags">
+          <span class="tag core">AWS</span>
+          <span class="tag">GCP</span>
+          <span class="tag">Docker</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">GitHub Actions</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-group-label">Data &amp; Storage</p>
+        <div class="skill-tags">
+          <span class="tag core">PostgreSQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Redis</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-group-label">Observability &amp; Reliability</p>
+        <div class="skill-tags">
+          <span class="tag core">OpenSearch</span>
+          <span class="tag">ELK Stack</span>
+          <span class="tag">Performance Optimisation</span>
+          <span class="tag">System Monitoring</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="skills-right reveal">
+    <div class="perf-card">
+      <h3 class="perf-title">Performance Delivered</h3>
+      <div class="perf-metric">
+        <span class="before">Throughput: &lt;1,000 TPM</span>
+        <span class="arrow">→</span>
+        <span class="after">4,333 TPM</span>
+      </div>
+      <div class="perf-metric">
+        <span class="before">Worst-case TAT: 30 min</span>
+        <span class="arrow">→</span>
+        <span class="after">&lt;50 sec</span>
+      </div>
+      <div class="perf-metric">
+        <span class="before">Dynatrace costs</span>
+        <span class="arrow">→</span>
+        <span class="after">Replaced w/ OpenSearch</span>
+      </div>
+      <div class="perf-metric">
+        <span class="before">Javalin API gateway</span>
+        <span class="arrow">→</span>
+        <span class="after">Spring (scalable)</span>
+      </div>
+    </div>
+
+    <div class="perf-card">
+      <h3 class="perf-title">Domain Experience</h3>
+      <div class="perf-metric">
+        <span class="before">Cross-border payments</span>
+        <span class="after">6+ corridors</span>
+      </div>
+      <div class="perf-metric">
+        <span class="before">AML / Compliance platforms</span>
+        <span class="after">Current focus</span>
+      </div>
+      <div class="perf-metric">
+        <span class="before">Fintech infrastructure</span>
+        <span class="after">East Africa + Asia</span>
+      </div>
+      <div class="perf-metric">
+        <span class="before">Observability engineering</span>
+        <span class="after">Full platform builds</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">04 — Notable Work</p>
+  <h2 class="section-title reveal">Selected Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <span class="project-num">01</span>
+      <h3 class="project-title">AML Compliance Platform</h3>
+      <p class="project-desc">Full-stack financial crime detection platform covering customer screening, real-time transaction monitoring, risk scoring, investigations workflow, and regulatory reporting. Includes custom rules engine and alerting pipelines.</p>
+      <div class="project-tags">
+        <span class="ptag">Java</span><span class="ptag">Spring Boot</span><span class="ptag">Kafka</span><span class="ptag">PostgreSQL</span><span class="ptag">AML</span>
+      </div>
+      <a class="project-link" href="https://scytalesystems.tech/aml-platform" target="_blank" rel="noopener">View Live</a>
+      <p class="project-desc">Designed and deployed a full observability stack on OpenSearch to replace Dynatrace — delivering equivalent visibility at a fraction of the cost. Included log aggregation, alerting, and custom dashboards.</p>
+      <div class="project-tags">
+        <span class="ptag">OpenSearch</span><span class="ptag">ELK</span><span class="ptag">Monitoring</span><span class="ptag">AWS</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <span class="project-num">03</span>
+      <h3 class="project-title">Cross-Border Payments Engine</h3>
+      <p class="project-desc">Architected and integrated multi-corridor cross-border payment rails across Ethiopia, Tanzania, Uganda, India, Japan, and China — expanding payout reach with mobile money and bank transfer terminations.</p>
+      <div class="project-tags">
+        <span class="ptag">Java</span><span class="ptag">REST APIs</span><span class="ptag">Fintech</span><span class="ptag">Mobile Money</span>
+      </div>
+      <a class="project-link" href="https://www.upesi.co.ke/" target="_blank" rel="noopener">View Live</a>
+      <p class="project-desc">Led end-to-end migration of core API gateway from Javalin to Spring Boot. Improved throughput from under 1,000 to 4,333 TPM and slashed worst-case TAT from 30 minutes to under 50 seconds.</p>
+      <div class="project-tags">
+        <span class="ptag">Spring Boot</span><span class="ptag">Javalin</span><span class="ptag">Performance</span><span class="ptag">Microservices</span>
+      </div>
+      <a class="project-link" href="https://www.upesi.co.ke/" target="_blank" rel="noopener">View Live</a>
+      <p class="project-desc">Built a suite of internal web platforms including contract management, student onboarding portals, leave tracking, and LMS analytics dashboards. Also supported Moodle e-learning infrastructure.</p>
+      <div class="project-tags">
+        <span class="ptag">Node.js</span><span class="ptag">MySQL</span><span class="ptag">Moodle</span><span class="ptag">Web Apps</span>
+      </div>
+      <a class="project-link" href="https://apps.embuni.ac.ke/" target="_blank" rel="noopener">View Live</a>
+      <p class="project-desc">Developed a mobile payment application for a trading platform at Rivest Enterprises, alongside school management systems that improved operational efficiency and real-time communication.</p>
+      <div class="project-tags">
+        <span class="ptag">Mobile</span><span class="ptag">Payments</span><span class="ptag">Java</span>
+      </div>
+      <a class="project-link" href="https://app.abepayy.com/" target="_blank" rel="noopener">View Live</a>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div>
+    <p class="section-label">05 — Contact</p>
+    <h2 class="section-title reveal">Let's build<br/><em style="font-family:'DM Serif Display',serif; font-style:italic; color:var(--accent)">something</em><br/>together.</h2>
+    <p class="reveal" style="color:var(--muted); font-size:1rem; max-width:38ch; margin-top:1rem;">
+      Open to senior backend, distributed systems, platform engineering, and technical lead opportunities — remote or Nairobi-based.
+    </p>
+  </div>
+  <div class="contact-links reveal">
+    <a class="contact-link" href="mailto:sgatharikih@gmail.com">
+      <span class="cl-icon">EMAIL</span>
+      sgatharikih@gmail.com
+    </a>
+    <a class="contact-link" href="https://linkedin.com/in/gatharikih" target="_blank" rel="noopener">
+      <span class="cl-icon">LINKEDIN</span>
+      linkedin.com/in/gatharikih
+    </a>
+    <a class="contact-link" href="tel:+254701785642">
+      <span class="cl-icon">PHONE</span>
+      +254 701 785 642
+    </a>
+    <a class="contact-link" href="NGIGI_SIMON_GATHARIKI_CV.pdf" download>
+      <span class="cl-icon">CV</span>
+      Download Résumé (PDF)
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Simon Gathariki · Nairobi, Kenya</span>
+  <span>Backend Engineer · Technical Lead · Platform Engineering</span>
+</footer>
+
+<script>
+  // ── DARK MODE TOGGLE ──
+  const toggle = document.getElementById('themeToggle');
+  const icon = toggle.querySelector('.toggle-icon');
+  const label = toggle.querySelector('.toggle-label');
+  const html = document.documentElement;
+
+  // Respect saved preference
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    icon.textContent = '☽';
+    label.textContent = 'DARK';
+  }
+
+  toggle.addEventListener('click', () => {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      icon.textContent = '☀︎';
+      label.textContent = 'LIGHT';
+      localStorage.setItem('theme', 'light');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      icon.textContent = '☽';
+      label.textContent = 'DARK';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+
+  // ── SCROLL REVEAL ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
