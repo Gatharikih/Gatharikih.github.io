@@ -6,27 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gatharĩki Ngigĩ (Simon Gathariki) — Backend Engineer & Technical Lead</title>
   <meta name="description"
-    content="Gatharĩki Ngigĩ (Simon Gathariki) — Software Engineer and Technical Lead with 5+ years building scalable backend systems, distributed pipelines, and payment infrastructure. Based in Nairobi, Kenya." />
+        content="Gatharĩki Ngigĩ (Simon Gathariki) — Software Engineer and Technical Lead with 5+ years building scalable backend systems, distributed pipelines, and payment infrastructure. Based in Nairobi, Kenya." />
   <meta name="author" content="Gathariki Ngigi Simon Gathariki Ngigi Simon Simon Ngigi Gathariki" />
   <meta name="keywords"
-    content="Gathariki Ngigi, Ngigi Gathariki, Simon Gathariki, Gathariki Simon, Simon Ngigi, Ngigi Simon, Simon Gathariki Ngigi, Gathariki Ngigi Simon, Ngigi Simon Gathariki, backend engineer Nairobi, technical lead Kenya, distributed systems engineer, platform engineer Kenya, Java engineer Nairobi, Spring Boot developer, Kafka engineer Africa" />
+        content="Gathariki Ngigi, Ngigi Gathariki, Simon Gathariki, Gathariki Simon, Simon Ngigi, Ngigi Simon, Simon Gathariki Ngigi, Gathariki Ngigi Simon, Ngigi Simon Gathariki, backend engineer Nairobi, technical lead Kenya, distributed systems engineer, platform engineer Kenya, Java engineer Nairobi, Spring Boot developer, Kafka engineer Africa" />
   <meta property="og:title" content="Gatharĩki Ngigĩ (Simon Gathariki) — Backend Engineer & Technical Lead" />
   <meta property="og:description"
-    content="Gatharĩki Ngigĩ (Simon Gathariki) — 5+ years building scalable backend systems, distributed pipelines, and cross-border payment infrastructure. Open to senior backend, platform engineering, and technical lead roles." />
+        content="Gatharĩki Ngigĩ (Simon Gathariki) — 5+ years building scalable backend systems, distributed pipelines, and cross-border payment infrastructure. Open to senior backend, platform engineering, and technical lead roles." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gatharikih.github.io" />
   <link rel="canonical" href="https://gatharikih.github.io" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Gatharĩki Ngigĩ (Simon Gathariki) — Backend Engineer & Technical Lead" />
   <meta name="twitter:description"
-    content="Gatharĩki Ngigĩ (Simon Gathariki) — 5+ years building scalable backend systems, distributed pipelines, and cross-border payment infrastructure." />
+        content="Gatharĩki Ngigĩ (Simon Gathariki) — 5+ years building scalable backend systems, distributed pipelines, and cross-border payment infrastructure." />
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d0f14'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia%2C serif' font-size='13' font-weight='bold' fill='%23c84b2f' letter-spacing='-0.5'%3ESG%3C/text%3E%3C/svg%3E" />
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d0f14'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia%2C serif' font-size='13' font-weight='bold' fill='%23c84b2f' letter-spacing='-0.5'%3ESG%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
+          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Caveat:wght@500;600;700&display=swap"
+          rel="stylesheet" />
   <style>
     :root {
       --ink: #0d0f14;
@@ -43,6 +43,9 @@
       --exp-border: rgba(255, 255, 255, 0.1);
       --exp-muted: rgba(255, 255, 255, 0.65);
       --exp-bright: rgba(255, 255, 255, 0.9);
+      --pencil: #4a4438;
+      --pencil-soft: #8f8672;
+      --pencil2: #5b7a9e;
     }
 
     [data-theme="dark"] {
@@ -60,6 +63,9 @@
       --exp-border: rgba(255, 255, 255, 0.08);
       --exp-muted: rgba(232, 228, 219, 0.6);
       --exp-bright: rgba(232, 228, 219, 0.92);
+      --pencil: #c9c2b2;
+      --pencil-soft: #746c5a;
+      --pencil2: #7fa3cc;
     }
 
     *,
@@ -93,6 +99,26 @@
       pointer-events: none;
       z-index: 1000;
       opacity: 0.6;
+    }
+
+    /* ── HAND-DRAWN SYSTEM ──
+       A handful of sketched marks, reused deliberately rather than
+       scattered — the same "pencil" used throughout so it reads as
+       one hand, not a clip-art pass. */
+    .sketch {
+      fill: none;
+      stroke: var(--pencil);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.3s ease;
+    }
+
+    .hand-note {
+      font-family: 'Caveat', cursive;
+      font-weight: 600;
+      color: var(--pencil2);
+      line-height: 1.3;
     }
 
     /* ── NAV ── */
@@ -146,11 +172,44 @@
     }
 
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      color: var(--accent);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
       text-transform: uppercase;
+    }
+
+    .nav-mark {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-mark svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .nav-mark svg .sketch {
+      stroke: var(--accent);
+      stroke-width: 2.2;
+    }
+
+    .nav-mark-text {
+      position: relative;
+      font-family: 'DM Serif Display', serif;
+      font-size: 0.78rem;
+      color: var(--accent);
     }
 
     .nav-links {
@@ -320,6 +379,45 @@
       color: var(--accent);
     }
 
+    .name-underline-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .name-underline {
+      position: absolute;
+      left: -3%;
+      bottom: -0.16em;
+      width: 106%;
+      height: 0.55em;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .name-underline path {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 3;
+      stroke-linecap: round;
+      opacity: 0.8;
+      stroke-dasharray: 340;
+      stroke-dashoffset: 340;
+      animation: sketchDraw 0.9s 1.05s cubic-bezier(0.22, 0.7, 0.2, 1) forwards;
+    }
+
+    @keyframes sketchDraw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .name-underline path {
+        animation: none;
+        stroke-dashoffset: 0;
+      }
+    }
+
     .hero-desc {
       font-size: 1.05rem;
       color: var(--muted);
@@ -473,8 +571,23 @@
     }
 
     .meta-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.95rem;
       border-left: 3px solid var(--accent);
       padding-left: 1.25rem;
+    }
+
+    .meta-icon {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      overflow: visible;
+    }
+
+    .meta-icon .sketch {
+      stroke: var(--pencil);
     }
 
     .meta-item .meta-key {
@@ -511,9 +624,35 @@
       display: flex;
       flex-direction: column;
       gap: 0;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 220px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-image: repeating-linear-gradient(to bottom,
+      var(--exp-border) 0 5px,
+      transparent 5px 9px,
+      var(--exp-border) 9px 13px,
+      transparent 13px 21px);
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: 220px;
+      top: 2.85rem;
+      width: 15px;
+      height: 15px;
+      transform: translateX(-50%);
+      z-index: 2;
     }
 
     .timeline-item {
+      position: relative;
       display: grid;
       grid-template-columns: 220px 1fr;
       gap: 3rem;
@@ -695,11 +834,35 @@
 
     /* ── PROJECTS ── */
     #projects .projects-grid {
+      position: relative;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5px;
       background: var(--border);
       border: 1.5px solid var(--border);
+    }
+
+    .projects-pin {
+      position: absolute;
+      top: -19px;
+      left: 28px;
+      width: 30px;
+      height: 46px;
+      transform: rotate(-16deg);
+      filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.18));
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .projects-pin .sketch {
+      stroke: var(--pencil-soft);
+      stroke-width: 2.2;
+    }
+
+    @media (max-width: 900px) {
+      .projects-pin {
+        left: 18px;
+      }
     }
 
     .project-card {
@@ -843,6 +1006,24 @@
       font-family: 'IBM Plex Mono', monospace;
     }
 
+    .footer-sig {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .sig-mark {
+      width: 62px;
+      height: 24px;
+      flex-shrink: 0;
+      overflow: visible;
+    }
+
+    .sig-mark .sketch {
+      stroke: var(--pencil-soft);
+      stroke-width: 2;
+    }
+
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from {
@@ -940,6 +1121,11 @@
         gap: 0.5rem;
       }
 
+      .timeline::before,
+      .tl-dot {
+        display: none;
+      }
+
       .tl-meta {
         display: flex;
         flex-wrap: wrap;
@@ -966,6 +1152,10 @@
         flex-direction: column;
         gap: 0.4rem;
         text-align: center;
+      }
+
+      .footer-sig {
+        justify-content: center;
       }
 
       /* Skills right cards */
@@ -1131,554 +1321,649 @@
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <span class="nav-logo">SG — Portfolio</span>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <span class="toggle-icon">☀︎</span>
-        <span class="toggle-label">LIGHT</span>
-      </button>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#about" class="mobile-nav-link">About</a>
-    <a href="#experience" class="mobile-nav-link">Experience</a>
-    <a href="#skills" class="mobile-nav-link">Skills</a>
-    <a href="#projects" class="mobile-nav-link">Projects</a>
-    <a href="#contact" class="mobile-nav-link">Contact</a>
+<!-- NAV -->
+<nav>
+    <span class="nav-logo">
+      <span class="nav-mark">
+        <svg viewBox="0 0 44 44" aria-hidden="true">
+          <path class="sketch"
+                d="M22.5 4.8c8.3-0.7 16.9 2.8 18.3 10.4 1.5 8.1-4.7 16.9-9.6 19.9-5.5 3.4-14.3 3.6-19.2-0.2C7.1 31.2 3 24.3 3.9 16.7 4.8 9.4 13.6 5.4 22.5 4.8Z" />
+        </svg>
+        <span class="nav-mark-text">SG</span>
+      </span>
+      Portfolio
+    </span>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="toggle-icon">☀︎</span>
+      <span class="toggle-label">LIGHT</span>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
 
-  <!-- BACK TO TOP -->
-  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-nav-link">About</a>
+  <a href="#experience" class="mobile-nav-link">Experience</a>
+  <a href="#skills" class="mobile-nav-link">Skills</a>
+  <a href="#projects" class="mobile-nav-link">Projects</a>
+  <a href="#contact" class="mobile-nav-link">Contact</a>
+</div>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-left">
-      <p class="hero-tag">Backend Engineer &amp; Technical Lead · Nairobi, Kenya</p>
-      <h1 class="hero-name">
-        <a href="https://www.linkedin.com/in/gatharikih/" target="_blank" rel="noopener"
-          style="text-decoration:none; color:inherit;">Gatharĩki</a><br />
-        <em>Ngigĩ</em>
-      </h1>
-      <p class="hero-desc">
-        Building scalable backend systems, distributed pipelines, and high-availability APIs
-        that deliver real business impact — end-to-end ownership, cross-timezone collaboration.
-      </p>
-      <div class="hero-cta">
-        <a href="#experience" class="btn btn-primary">View Experience</a>
-        <a href="mailto:sgatharikih@gmail.com" class="btn btn-outline">Get in Touch</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="stat-card">
-        <span class="stat-num">5+</span>
-        <span class="stat-label">Years building &amp; operating<br />production backend systems</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-num">4×</span>
-        <span class="stat-label">Transaction throughput increase<br />(&lt;1K → 4,333 TPM)</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-num">96%</span>
-        <span class="stat-label">Latency reduction<br />(30 min → &lt;50 sec TAT)</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-num">6+</span>
-        <span class="stat-label">Cross-border payment corridors<br />designed &amp; integrated</span>
-      </div>
-    </div>
-  </section>
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div>
-      <p class="section-label">01 — About</p>
-      <h2 class="section-title reveal">Engineering systems<br />that hold under pressure</h2>
-      <div class="about-body reveal">
-        <p>I'm a Software Engineer and Technical Lead with over five years of experience designing backend systems,
-          distributed architectures, and data pipelines that run reliably in production.</p>
-        <p>My work spans <strong>payment infrastructure, AML compliance platforms, observability systems, and API
-            gateways</strong> — always with a focus on measurable performance, maintainability, and cross-functional
-          clarity.</p>
-        <p>I'm comfortable owning systems from design to deployment, driving architectural decisions, and communicating
-          complex tradeoffs to product and business stakeholders alike.</p>
-      </div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-tag">Backend Engineer &amp; Technical Lead · Nairobi, Kenya</p>
+    <h1 class="hero-name">
+      <a href="https://www.linkedin.com/in/gatharikih/" target="_blank" rel="noopener"
+         style="text-decoration:none; color:inherit;">Gatharĩki</a><br />
+      <span class="name-underline-wrap">
+          <em>Ngigĩ</em>
+          <svg class="name-underline" viewBox="0 0 220 24" preserveAspectRatio="none" aria-hidden="true">
+            <path
+                    d="M3 15c24-7 50-10 76-9 29 1 53 8 80 5 21-2 38-9 58-6" />
+          </svg>
+        </span>
+    </h1>
+    <p class="hero-desc">
+      Building scalable backend systems, distributed pipelines, and high-availability APIs
+      that deliver real business impact — end-to-end ownership, cross-timezone collaboration.
+    </p>
+    <div class="hero-cta">
+      <a href="#experience" class="btn btn-primary">View Experience</a>
+      <a href="mailto:sgatharikih@gmail.com" class="btn btn-outline">Get in Touch</a>
     </div>
-    <div class="about-meta reveal">
-      <div class="meta-item">
+  </div>
+  <div class="hero-right">
+    <div class="stat-card">
+      <span class="stat-num">5+</span>
+      <span class="stat-label">Years building &amp; operating<br />production backend systems</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">4×</span>
+      <span class="stat-label">Transaction throughput increase<br />(&lt;1K → 4,333 TPM)</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">96%</span>
+      <span class="stat-label">Latency reduction<br />(30 min → &lt;50 sec TAT)</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">6+</span>
+      <span class="stat-label">Cross-border payment corridors<br />designed &amp; integrated</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <p class="section-label">01 — About</p>
+    <h2 class="section-title reveal">Engineering systems<br />that hold under pressure</h2>
+    <div class="about-body reveal">
+      <p>I'm a Software Engineer and Technical Lead with over five years of experience designing backend systems,
+        distributed architectures, and data pipelines that run reliably in production.</p>
+      <p>My work spans <strong>payment infrastructure, AML compliance platforms, observability systems, and API
+        gateways</strong> — always with a focus on measurable performance, maintainability, and cross-functional
+        clarity.</p>
+      <p>I'm comfortable owning systems from design to deployment, driving architectural decisions, and communicating
+        complex tradeoffs to product and business stakeholders alike.</p>
+    </div>
+  </div>
+  <div class="about-meta reveal">
+    <div class="meta-item">
+      <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="sketch" d="M4.5 6.3c0-1.2 1-2 2.2-1.9h14.6c1.2 0 2.2.9 2.1 2.1l-.2 15c-.1 1.1-1 1.9-2.1 1.9H6.8c-1.2 0-2.2-.9-2.2-2.1Z" />
+        <path class="sketch" d="M8.5 12.2 12 15l-3.7 3" />
+        <path class="sketch" d="M14 18.3h5.6" />
+      </svg>
+      <div>
         <p class="meta-key">Current Role</p>
         <p class="meta-val">Technical Lead — Scytale Systems</p>
       </div>
-      <div class="meta-item">
+    </div>
+    <div class="meta-item">
+      <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="sketch" d="M14 3.8 24.6 9 14 14.2 3.4 9Z" />
+        <path class="sketch" d="M7.5 12.3 3.4 14.3 14 19.5l10.6-5.2-4.1-2" />
+        <path class="sketch" d="M7.5 17.6 3.4 19.6 14 24.8l10.6-5.2-4.1-2" />
+      </svg>
+      <div>
         <p class="meta-key">Specialisation</p>
         <p class="meta-val">Backend Systems · Distributed Architecture · Platform Engineering</p>
       </div>
-      <div class="meta-item">
+    </div>
+    <div class="meta-item">
+      <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="sketch" d="M11.4 6.2 3.6 14l7.8 7.8" />
+        <path class="sketch" d="M16.6 6.2 24.4 14l-7.8 7.8" />
+      </svg>
+      <div>
         <p class="meta-key">Core Stack</p>
         <p class="meta-val">Java · Spring Boot · Node.js · Kafka · PostgreSQL · AWS/GCP</p>
       </div>
-      <div class="meta-item">
+    </div>
+    <div class="meta-item">
+      <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="sketch" d="M14 4.6 25.4 9.8 14 15 2.6 9.8Z" />
+        <path class="sketch" d="M8 12.3v6.1c0 1.9 2.7 3.3 6 3.3s6-1.4 6-3.3v-6.1" />
+        <path class="sketch" d="M25.4 9.8v7" />
+      </svg>
+      <div>
         <p class="meta-key">Education</p>
         <p class="meta-val">BSc Information Technology — Kirinyaga University</p>
       </div>
-      <div class="meta-item">
+    </div>
+    <div class="meta-item">
+      <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="sketch" d="M14 4.3a6.6 6.6 0 1 1-.15 0Z" />
+        <path class="sketch" d="M10.3 15.6 8.4 23.7l4-2.1 2 3 2-3 4 2.1-1.9-8.2" />
+      </svg>
+      <div>
         <p class="meta-key">Certifications</p>
         <p class="meta-val">Google Cloud Associate Cloud Engineer (ACE) — in progress</p>
       </div>
-      <div class="meta-item">
+    </div>
+    <div class="meta-item">
+      <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="sketch" d="M14 3.6a10 10 0 1 1-.2 0Z" />
+        <path class="sketch" d="M14 8.6 17 14l-3 5.4-3-5.4Z" />
+      </svg>
+      <div>
         <p class="meta-key">Location</p>
         <p class="meta-val">Nairobi, Kenya · Open to remote &amp; distributed teams</p>
       </div>
     </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <p class="section-label">02 — Experience</p>
-    <h2 class="section-title reveal">Where I've built things</h2>
-
-    <div class="timeline">
-
-      <div class="timeline-item reveal">
-        <div class="tl-meta">
-          <p class="tl-period">Oct 2025 — Present</p>
-          <p class="tl-company">Scytale Systems</p>
-          <span class="tl-badge">Current</span>
-        </div>
-        <div class="tl-content">
-          <h3 class="tl-role">Technical Lead</h3>
-          <ul class="tl-points">
-            <li class="tl-highlight">Leading architecture of a full-stack AML compliance platform: screening,
-              transaction monitoring, risk scoring, investigations &amp; regulatory reporting.</li>
-            <li>Led end-to-end frontend development of a high-security AML compliance platform UI, ensuring
-              production reliability and seamless UX.</li>
-            <li>Designing the core AML rules engine and alerting workflows for financial crime detection.</li>
-            <li>Building real-time and batch ETL pipelines for large-scale financial data processing and analytics.</li>
-            <li>Driving cross-functional collaboration across QA, product, and business teams to deliver a
-              production-ready compliance platform.</li>
-            <li>Overseeing system stability, monitoring, and operational readiness of production services.</li>
-            <li>Designing workflows for secure data processing and regulatory reporting.</li>
-          </ul>
-        </div>
+    <div class="meta-item">
+      <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="sketch" d="M6 22.6 19.8 8.8l2.9 2.9L8.9 25.5l-4 1.1Z" />
+        <path class="sketch" d="M18 10.6l2.9 2.9" />
+        <path class="sketch" d="M4.9 26.6 6 22.6l2.9 2.9Z" />
+      </svg>
+      <div>
+        <p class="meta-key">Off the Clock</p>
+        <p class="meta-val">Colored-pencil sketching, drone motor rebuilds &amp; reviving old Android phones</p>
       </div>
-
-      <div class="timeline-item reveal">
-        <div class="tl-meta">
-          <p class="tl-period">Feb 2023 — Apr 2025</p>
-          <p class="tl-company">SwitchLink Africa</p>
-          <span class="tl-badge">2 yrs</span>
-        </div>
-        <div class="tl-content">
-          <h3 class="tl-role">Software Engineer</h3>
-          <ul class="tl-points">
-            <li class="tl-highlight">Increased transaction throughput from &lt;1,000 to 4,333 TPM; reduced worst-case
-              TAT from 30 minutes to &lt;50 seconds.</li>
-            <li>Architected and deployed an OpenSearch-based observability platform, replacing Dynatrace and
-              significantly reducing monitoring costs.</li>
-            <li>Led API gateway migration from Javalin to Spring, improving performance, reliability and scalability at
-              scale.</li>
-            <li>Designed and implemented cross-border payment integrations across Ethiopia, Tanzania, Uganda, India,
-              Japan, and China.</li>
-            <li>Delivered new mobile money integrations expanding regional payout capabilities across East Africa.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="tl-meta">
-          <p class="tl-period">Jan 2022 — Aug 2022</p>
-          <p class="tl-company">University of Embu</p>
-          <span class="tl-badge">Part-time Lecturer</span>
-        </div>
-        <div class="tl-content">
-          <h3 class="tl-role">Part-time Lecturer</h3>
-          <ul class="tl-points">
-            <li>Delivered training in Cloud Computing and Desktop Publishing to undergraduate students.</li>
-            <li>Provided hands-on ICT lab support, assisting students with system usage, applications, and
-              practical exercises.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="tl-meta">
-          <p class="tl-period">Apr 2021 — Apr 2022</p>
-          <p class="tl-company">University of Embu</p>
-          <span class="tl-badge">ICT Support Officer</span>
-        </div>
-        <div class="tl-content">
-          <h3 class="tl-role">ICT Support Officer</h3>
-          <ul class="tl-points">
-            <li>Provided end-user IT support for staff and students across hardware, software, and network
-              issues.</li>
-            <li>Administered and supported Microsoft 365 and Google Workspace accounts and services.</li>
-            <li>Maintained ICT infrastructure including workstations, peripherals, and shared systems.</li>
-            <li>Managed and supported Moodle LMS, improving availability and user experience.</li>
-            <li>Built and maintained internal web systems for institutional operations.</li>
-            <li>Coordinated with vendors for ICT support, maintenance, and procurement issues.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="timeline-item reveal">
-        <div class="tl-meta">
-          <p class="tl-period">Jul 2018 — Oct 2020</p>
-          <p class="tl-company">Rivest Enterprises</p>
-          <span class="tl-badge">Early career</span>
-        </div>
-        <div class="tl-content">
-          <h3 class="tl-role">Software Developer</h3>
-          <ul class="tl-points">
-            <li>Developed a mobile payment application for a trading platform.</li>
-            <li>Implemented school management systems, improving operational efficiency and real-time communication.
-            </li>
-          </ul>
-        </div>
-      </div>
-
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div>
-      <p class="section-label">03 — Skills</p>
-      <h2 class="section-title reveal">Technical Stack</h2>
-      <div class="skill-groups reveal">
-        <div>
-          <p class="skill-group-label">Frontend Engineering</p>
-          <div class="skill-tags">
-            <span class="tag core">React</span>
-            <span class="tag core">NextJS</span>
-            <span class="tag">JS / TypeScript</span>
-            <span class="tag">Material Design</span>
-            <span class="tag">State Management</span>
-          </div>
-        </div>
-        <div>
-          <p class="skill-group-label">Backend &amp; Systems</p>
-          <div class="skill-tags">
-            <span class="tag core">Java</span>
-            <span class="tag core">Spring Boot</span>
-            <span class="tag core">Node.js</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">Microservices</span>
-          </div>
-        </div>
-        <div>
-          <p class="skill-group-label">Distributed Systems &amp; Messaging</p>
-          <div class="skill-tags">
-            <span class="tag core">Apache Kafka</span>
-            <span class="tag">RabbitMQ</span>
-            <span class="tag">Event-driven Architecture</span>
-            <span class="tag">ETL Pipelines</span>
-          </div>
-        </div>
-        <div>
-          <p class="skill-group-label">Cloud &amp; DevOps</p>
-          <div class="skill-tags">
-            <span class="tag core">AWS</span>
-            <span class="tag">GCP</span>
-            <span class="tag">Docker</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">GitHub Actions</span>
-            <span class="tag">Playwright</span>
-          </div>
-        </div>
-        <div>
-          <p class="skill-group-label">Data &amp; Storage</p>
-          <div class="skill-tags">
-            <span class="tag core">PostgreSQL</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">Redis</span>
-          </div>
-        </div>
-        <div>
-          <p class="skill-group-label">Observability &amp; Reliability</p>
-          <div class="skill-tags">
-            <span class="tag core">OpenSearch</span>
-            <span class="tag">ELK Stack</span>
-            <span class="tag">Performance Optimisation</span>
-            <span class="tag">System Monitoring</span>
-          </div>
-        </div>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">02 — Experience</p>
+  <h2 class="section-title reveal">Where I've built things</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <svg class="tl-dot" viewBox="0 0 20 20" aria-hidden="true">
+        <path fill="var(--accent)"
+              d="M10 2.2c3 0 6.6 1.9 7.1 5.4.5 3.5-2 7.1-5.6 8.1-3.8 1.1-7.8-1-8.6-4.5C2.1 7.6 5 2.8 10 2.2Z" />
+      </svg>
+      <div class="tl-meta">
+        <p class="tl-period">Oct 2025 — Present</p>
+        <p class="tl-company">Scytale Systems</p>
+        <span class="tl-badge">Current</span>
+      </div>
+      <div class="tl-content">
+        <h3 class="tl-role">Technical Lead</h3>
+        <ul class="tl-points">
+          <li class="tl-highlight">Leading architecture of a full-stack AML compliance platform: screening,
+            transaction monitoring, risk scoring, investigations &amp; regulatory reporting.</li>
+          <li>Led end-to-end frontend development of a high-security AML compliance platform UI, ensuring
+            production reliability and seamless UX.</li>
+          <li>Designing the core AML rules engine and alerting workflows for financial crime detection.</li>
+          <li>Building real-time and batch ETL pipelines for large-scale financial data processing and analytics.</li>
+          <li>Driving cross-functional collaboration across QA, product, and business teams to deliver a
+            production-ready compliance platform.</li>
+          <li>Overseeing system stability, monitoring, and operational readiness of production services.</li>
+          <li>Designing workflows for secure data processing and regulatory reporting.</li>
+        </ul>
       </div>
     </div>
 
-    <div class="skills-right reveal">
-      <div class="perf-card">
-        <h3 class="perf-title">Performance Delivered</h3>
-        <div class="perf-metric">
-          <span class="before">Throughput: &lt;1,000 TPM</span>
-          <span class="arrow">→</span>
-          <span class="after">4,333 TPM</span>
-        </div>
-        <div class="perf-metric">
-          <span class="before">Worst-case TAT: 30 min</span>
-          <span class="arrow">→</span>
-          <span class="after">&lt;50 sec</span>
-        </div>
-        <div class="perf-metric">
-          <span class="before">Dynatrace costs</span>
-          <span class="arrow">→</span>
-          <span class="after">Replaced w/ OpenSearch</span>
-        </div>
-        <div class="perf-metric">
-          <span class="before">Javalin API gateway</span>
-          <span class="arrow">→</span>
-          <span class="after">Spring (scalable)</span>
+    <div class="timeline-item reveal">
+      <svg class="tl-dot" viewBox="0 0 20 20" aria-hidden="true">
+        <path fill="var(--exp-muted)"
+              d="M10 2.2c3 0 6.6 1.9 7.1 5.4.5 3.5-2 7.1-5.6 8.1-3.8 1.1-7.8-1-8.6-4.5C2.1 7.6 5 2.8 10 2.2Z" />
+      </svg>
+      <div class="tl-meta">
+        <p class="tl-period">Feb 2023 — Apr 2025</p>
+        <p class="tl-company">SwitchLink Africa</p>
+        <span class="tl-badge">2 yrs</span>
+      </div>
+      <div class="tl-content">
+        <h3 class="tl-role">Software Engineer</h3>
+        <ul class="tl-points">
+          <li class="tl-highlight">Increased transaction throughput from &lt;1,000 to 4,333 TPM; reduced worst-case
+            TAT from 30 minutes to &lt;50 seconds.</li>
+          <li>Architected and deployed an OpenSearch-based observability platform, replacing Dynatrace and
+            significantly reducing monitoring costs.</li>
+          <li>Led API gateway migration from Javalin to Spring, improving performance, reliability and scalability at
+            scale.</li>
+          <li>Designed and implemented cross-border payment integrations across Ethiopia, Tanzania, Uganda, India,
+            Japan, and China.</li>
+          <li>Delivered new mobile money integrations expanding regional payout capabilities across East Africa.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <svg class="tl-dot" viewBox="0 0 20 20" aria-hidden="true">
+        <path fill="var(--exp-muted)"
+              d="M10 2.2c3 0 6.6 1.9 7.1 5.4.5 3.5-2 7.1-5.6 8.1-3.8 1.1-7.8-1-8.6-4.5C2.1 7.6 5 2.8 10 2.2Z" />
+      </svg>
+      <div class="tl-meta">
+        <p class="tl-period">Jan 2022 — Aug 2022</p>
+        <p class="tl-company">University of Embu</p>
+        <span class="tl-badge">Part-time Lecturer</span>
+      </div>
+      <div class="tl-content">
+        <h3 class="tl-role">Part-time Lecturer</h3>
+        <ul class="tl-points">
+          <li>Delivered training in Cloud Computing and Desktop Publishing to undergraduate students.</li>
+          <li>Provided hands-on ICT lab support, assisting students with system usage, applications, and
+            practical exercises.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <svg class="tl-dot" viewBox="0 0 20 20" aria-hidden="true">
+        <path fill="var(--exp-muted)"
+              d="M10 2.2c3 0 6.6 1.9 7.1 5.4.5 3.5-2 7.1-5.6 8.1-3.8 1.1-7.8-1-8.6-4.5C2.1 7.6 5 2.8 10 2.2Z" />
+      </svg>
+      <div class="tl-meta">
+        <p class="tl-period">Apr 2021 — Apr 2022</p>
+        <p class="tl-company">University of Embu</p>
+        <span class="tl-badge">ICT Support Officer</span>
+      </div>
+      <div class="tl-content">
+        <h3 class="tl-role">ICT Support Officer</h3>
+        <ul class="tl-points">
+          <li>Provided end-user IT support for staff and students across hardware, software, and network
+            issues.</li>
+          <li>Administered and supported Microsoft 365 and Google Workspace accounts and services.</li>
+          <li>Maintained ICT infrastructure including workstations, peripherals, and shared systems.</li>
+          <li>Managed and supported Moodle LMS, improving availability and user experience.</li>
+          <li>Built and maintained internal web systems for institutional operations.</li>
+          <li>Coordinated with vendors for ICT support, maintenance, and procurement issues.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <svg class="tl-dot" viewBox="0 0 20 20" aria-hidden="true">
+        <path fill="var(--exp-muted)"
+              d="M10 2.2c3 0 6.6 1.9 7.1 5.4.5 3.5-2 7.1-5.6 8.1-3.8 1.1-7.8-1-8.6-4.5C2.1 7.6 5 2.8 10 2.2Z" />
+      </svg>
+      <div class="tl-meta">
+        <p class="tl-period">Jul 2018 — Oct 2020</p>
+        <p class="tl-company">Rivest Enterprises</p>
+        <span class="tl-badge">Early career</span>
+      </div>
+      <div class="tl-content">
+        <h3 class="tl-role">Software Developer</h3>
+        <ul class="tl-points">
+          <li>Developed a mobile payment application for a trading platform.</li>
+          <li>Implemented school management systems, improving operational efficiency and real-time communication.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div>
+    <p class="section-label">03 — Skills</p>
+    <h2 class="section-title reveal">Technical Stack</h2>
+    <div class="skill-groups reveal">
+      <div>
+        <p class="skill-group-label">Frontend Engineering</p>
+        <div class="skill-tags">
+          <span class="tag core">React</span>
+          <span class="tag core">NextJS</span>
+          <span class="tag">JS / TypeScript</span>
+          <span class="tag">Material Design</span>
+          <span class="tag">State Management</span>
         </div>
       </div>
-
-      <div class="perf-card">
-        <h3 class="perf-title">Domain Experience</h3>
-        <div class="perf-metric">
-          <span class="before">Cross-border payments</span>
-          <span class="after">6+ corridors</span>
+      <div>
+        <p class="skill-group-label">Backend &amp; Systems</p>
+        <div class="skill-tags">
+          <span class="tag core">Java</span>
+          <span class="tag core">Spring Boot</span>
+          <span class="tag core">Node.js</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Microservices</span>
         </div>
-        <div class="perf-metric">
-          <span class="before">AML / Compliance platforms</span>
-          <span class="after">Current focus</span>
+      </div>
+      <div>
+        <p class="skill-group-label">Distributed Systems &amp; Messaging</p>
+        <div class="skill-tags">
+          <span class="tag core">Apache Kafka</span>
+          <span class="tag">RabbitMQ</span>
+          <span class="tag">Event-driven Architecture</span>
+          <span class="tag">ETL Pipelines</span>
         </div>
-        <div class="perf-metric">
-          <span class="before">Fintech infrastructure</span>
-          <span class="after">East Africa + Asia</span>
+      </div>
+      <div>
+        <p class="skill-group-label">Cloud &amp; DevOps</p>
+        <div class="skill-tags">
+          <span class="tag core">AWS</span>
+          <span class="tag">GCP</span>
+          <span class="tag">Docker</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">Playwright</span>
         </div>
-        <div class="perf-metric">
-          <span class="before">Observability engineering</span>
-          <span class="after">Full platform builds</span>
+      </div>
+      <div>
+        <p class="skill-group-label">Data &amp; Storage</p>
+        <div class="skill-tags">
+          <span class="tag core">PostgreSQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Redis</span>
+        </div>
+      </div>
+      <div>
+        <p class="skill-group-label">Observability &amp; Reliability</p>
+        <div class="skill-tags">
+          <span class="tag core">OpenSearch</span>
+          <span class="tag">ELK Stack</span>
+          <span class="tag">Performance Optimisation</span>
+          <span class="tag">System Monitoring</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <p class="section-label">04 — Notable Work</p>
-    <h2 class="section-title reveal">Selected Projects</h2>
-    <div class="projects-grid">
-
-      <div class="project-card reveal">
-        <span class="project-num">01</span>
-        <h3 class="project-title">AML Compliance Platform</h3>
-        <p class="project-desc">Full-stack financial crime detection platform covering customer screening, real-time
-          transaction monitoring, risk scoring, investigations workflow, and regulatory reporting. Includes custom rules
-          engine and alerting pipelines.</p>
-        <div class="project-tags">
-          <span class="ptag">Java</span><span class="ptag">Spring Boot</span><span class="ptag">Kafka</span><span
-            class="ptag">PostgreSQL</span><span class="ptag">AML</span>
-        </div>
-        <a class="project-link" href="https://scytalesystems.tech/aml-platform" target="_blank" rel="noopener">View
-          Live</a>
+  <div class="skills-right reveal">
+    <div class="perf-card">
+      <h3 class="perf-title">Performance Delivered</h3>
+      <div class="perf-metric">
+        <span class="before">Throughput: &lt;1,000 TPM</span>
+        <span class="arrow">→</span>
+        <span class="after">4,333 TPM</span>
       </div>
-
-      <div class="project-card reveal">
-        <span class="project-num">02</span>
-        <h3 class="project-title">OpenSearch Observability Platform</h3>
-        <p class="project-desc">Designed and deployed a full observability stack on OpenSearch to replace Dynatrace —
-          delivering equivalent visibility at a fraction of the cost. Included log aggregation, alerting, and custom
-          dashboards.</p>
-        <div class="project-tags">
-          <span class="ptag">OpenSearch</span><span class="ptag">ELK</span><span class="ptag">Monitoring</span><span
-            class="ptag">AWS</span>
-        </div>
+      <div class="perf-metric">
+        <span class="before">Worst-case TAT: 30 min</span>
+        <span class="arrow">→</span>
+        <span class="after">&lt;50 sec</span>
       </div>
-
-      <div class="project-card reveal">
-        <span class="project-num">03</span>
-        <h3 class="project-title">Cross-Border Payments Engine</h3>
-        <p class="project-desc">Architected and integrated multi-corridor cross-border payment rails across Ethiopia,
-          Tanzania, Uganda, India, Japan, and China — expanding payout reach with mobile money and bank transfer
-          terminations.</p>
-        <div class="project-tags">
-          <span class="ptag">Java</span><span class="ptag">REST APIs</span><span class="ptag">Fintech</span><span
-            class="ptag">Mobile Money</span>
-        </div>
-        <a class="project-link" href="https://www.upesi.co.ke/" target="_blank" rel="noopener">View Live</a>
+      <div class="perf-metric">
+        <span class="before">Dynatrace costs</span>
+        <span class="arrow">→</span>
+        <span class="after">Replaced w/ OpenSearch</span>
       </div>
-
-      <div class="project-card reveal">
-        <span class="project-num">04</span>
-        <h3 class="project-title">API Gateway Migration</h3>
-        <p class="project-desc">Led end-to-end migration of core API gateway from Javalin to Spring Boot. Improved
-          throughput from under 1,000 to 4,333 TPM and slashed worst-case TAT from 30 minutes to under 50 seconds.</p>
-        <div class="project-tags">
-          <span class="ptag">Spring Boot</span><span class="ptag">Javalin</span><span
-            class="ptag">Performance</span><span class="ptag">Microservices</span>
-        </div>
-        <a class="project-link" href="https://www.upesi.co.ke/" target="_blank" rel="noopener">View Live</a>
+      <div class="perf-metric">
+        <span class="before">Javalin API gateway</span>
+        <span class="arrow">→</span>
+        <span class="after">Spring (scalable)</span>
       </div>
-
-      <div class="project-card reveal">
-        <span class="project-num">05</span>
-        <h3 class="project-title">University Internal Platforms</h3>
-        <p class="project-desc">Built a suite of internal web platforms including contract management, student
-          onboarding portals, leave tracking, and LMS analytics dashboards. Also supported Moodle e-learning
-          infrastructure.</p>
-        <div class="project-tags">
-          <span class="ptag">Node.js</span><span class="ptag">MySQL</span><span class="ptag">Moodle</span><span
-            class="ptag">Web Apps</span>
-        </div>
-        <a class="project-link" href="https://apps.embuni.ac.ke/" target="_blank" rel="noopener">View Live</a>
-      </div>
-
-      <div class="project-card reveal">
-        <span class="project-num">06</span>
-        <h3 class="project-title">Mobile Payment Application</h3>
-        <p class="project-desc">Developed a mobile payment application for a trading platform at Rivest Enterprises,
-          alongside school management systems that improved operational efficiency and real-time communication.</p>
-        <div class="project-tags">
-          <span class="ptag">Mobile</span><span class="ptag">Payments</span><span class="ptag">Java</span>
-        </div>
-        <a class="project-link" href="https://app.abepayy.com/" target="_blank" rel="noopener">View Live</a>
-      </div>
-
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div>
-      <p class="section-label">05 — Contact</p>
-      <h2 class="section-title reveal">Let's build<br /><em
-          style="font-family:'DM Serif Display',serif; font-style:italic; color:var(--accent)">something</em><br />together.
-      </h2>
-      <p class="reveal" style="color:var(--muted); font-size:1rem; max-width:38ch; margin-top:1rem;">
-        Open to senior backend, distributed systems, platform engineering, and technical lead opportunities — remote or
-        Nairobi-based.
-      </p>
+    <div class="perf-card">
+      <h3 class="perf-title">Domain Experience</h3>
+      <div class="perf-metric">
+        <span class="before">Cross-border payments</span>
+        <span class="after">6+ corridors</span>
+      </div>
+      <div class="perf-metric">
+        <span class="before">AML / Compliance platforms</span>
+        <span class="after">Current focus</span>
+      </div>
+      <div class="perf-metric">
+        <span class="before">Fintech infrastructure</span>
+        <span class="after">East Africa + Asia</span>
+      </div>
+      <div class="perf-metric">
+        <span class="before">Observability engineering</span>
+        <span class="after">Full platform builds</span>
+      </div>
     </div>
-    <div class="contact-links reveal">
-      <a class="contact-link" href="mailto:sgatharikih@gmail.com">
-        <span class="cl-icon">EMAIL</span>
-        sgatharikih@gmail.com
-      </a>
-      <a class="contact-link" href="https://linkedin.com/in/gatharikih" target="_blank" rel="noopener">
-        <span class="cl-icon">LINKEDIN</span>
-        linkedin.com/in/gatharikih
-      </a>
-      <a class="contact-link" href="https://github.com/Gatharikih" target="_blank" rel="noopener">
-        <span class="cl-icon">GITHUB</span>
-        github.com/Gatharikih
-      </a>
-      <a class="contact-link" href="https://hashnode.com/@gatharikih" target="_blank" rel="noopener">
-        <span class="cl-icon">BLOG</span>
-        hashnode.com/@gatharikih
-      </a>
-      <a class="contact-link"
-        href="https://raw.githubusercontent.com/Gatharikih/Gatharikih.github.io/master/NGIGI%20SIMON%20GATHARIKI%20CV.pdf"
-        target="_blank" rel="noopener">
-        <span class="cl-icon">CV</span>
-        Download Résumé (PDF)
-      </a>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">04 — Notable Work</p>
+  <h2 class="section-title reveal">Selected Projects</h2>
+  <div class="projects-grid">
+    <svg class="projects-pin" viewBox="0 0 30 46" aria-hidden="true">
+      <path class="sketch" fill="none"
+            d="M9 14.5V8.2c0-4 3.3-7.1 7.2-6.9 3.7.2 6.5 3.4 6.5 7.1v24.4c0 5.6-4.5 10.1-10.1 10.1S2.5 38.4 2.5 32.8V13.6c0-.9.7-1.6 1.6-1.6s1.6.7 1.6 1.6v17.7" />
+    </svg>
+
+    <div class="project-card reveal">
+      <span class="project-num">01</span>
+      <h3 class="project-title">AML Compliance Platform</h3>
+      <p class="project-desc">Full-stack financial crime detection platform covering customer screening, real-time
+        transaction monitoring, risk scoring, investigations workflow, and regulatory reporting. Includes custom rules
+        engine and alerting pipelines.</p>
+      <div class="project-tags">
+        <span class="ptag">Java</span><span class="ptag">Spring Boot</span><span class="ptag">Kafka</span><span
+              class="ptag">PostgreSQL</span><span class="ptag">AML</span>
+      </div>
+      <a class="project-link" href="https://scytalesystems.tech/aml-platform" target="_blank" rel="noopener">View
+        Live</a>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <span>© <span id="year"></span> Gatharĩki Ngigĩ · Nairobi, Kenya</span>
-    <span>Backend Engineer · Technical Lead · Platform Engineering</span>
-  </footer>
+    <div class="project-card reveal">
+      <span class="project-num">02</span>
+      <h3 class="project-title">OpenSearch Observability Platform</h3>
+      <p class="project-desc">Designed and deployed a full observability stack on OpenSearch to replace Dynatrace —
+        delivering equivalent visibility at a fraction of the cost. Included log aggregation, alerting, and custom
+        dashboards.</p>
+      <div class="project-tags">
+        <span class="ptag">OpenSearch</span><span class="ptag">ELK</span><span class="ptag">Monitoring</span><span
+              class="ptag">AWS</span>
+      </div>
+    </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const toggle = document.getElementById('themeToggle');
-    const icon = toggle.querySelector('.toggle-icon');
-    const label = toggle.querySelector('.toggle-label');
-    const html = document.documentElement;
+    <div class="project-card reveal">
+      <span class="project-num">03</span>
+      <h3 class="project-title">Cross-Border Payments Engine</h3>
+      <p class="project-desc">Architected and integrated multi-corridor cross-border payment rails across Ethiopia,
+        Tanzania, Uganda, India, Japan, and China — expanding payout reach with mobile money and bank transfer
+        terminations.</p>
+      <div class="project-tags">
+        <span class="ptag">Java</span><span class="ptag">REST APIs</span><span class="ptag">Fintech</span><span
+              class="ptag">Mobile Money</span>
+      </div>
+      <a class="project-link" href="https://www.upesi.co.ke/" target="_blank" rel="noopener">View Live</a>
+    </div>
 
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark') {
+    <div class="project-card reveal">
+      <span class="project-num">04</span>
+      <h3 class="project-title">API Gateway Migration</h3>
+      <p class="project-desc">Led end-to-end migration of core API gateway from Javalin to Spring Boot. Improved
+        throughput from under 1,000 to 4,333 TPM and slashed worst-case TAT from 30 minutes to under 50 seconds.</p>
+      <div class="project-tags">
+        <span class="ptag">Spring Boot</span><span class="ptag">Javalin</span><span
+              class="ptag">Performance</span><span class="ptag">Microservices</span>
+      </div>
+      <a class="project-link" href="https://www.upesi.co.ke/" target="_blank" rel="noopener">View Live</a>
+    </div>
+
+    <div class="project-card reveal">
+      <span class="project-num">05</span>
+      <h3 class="project-title">University Internal Platforms</h3>
+      <p class="project-desc">Built a suite of internal web platforms including contract management, student
+        onboarding portals, leave tracking, and LMS analytics dashboards. Also supported Moodle e-learning
+        infrastructure.</p>
+      <div class="project-tags">
+        <span class="ptag">Node.js</span><span class="ptag">MySQL</span><span class="ptag">Moodle</span><span
+              class="ptag">Web Apps</span>
+      </div>
+      <a class="project-link" href="https://apps.embuni.ac.ke/" target="_blank" rel="noopener">View Live</a>
+    </div>
+
+    <div class="project-card reveal">
+      <span class="project-num">06</span>
+      <h3 class="project-title">Mobile Payment Application</h3>
+      <p class="project-desc">Developed a mobile payment application for a trading platform at Rivest Enterprises,
+        alongside school management systems that improved operational efficiency and real-time communication.</p>
+      <div class="project-tags">
+        <span class="ptag">Mobile</span><span class="ptag">Payments</span><span class="ptag">Java</span>
+      </div>
+      <a class="project-link" href="https://app.abepayy.com/" target="_blank" rel="noopener">View Live</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div>
+    <p class="section-label">05 — Contact</p>
+    <h2 class="section-title reveal">Let's build<br /><em
+            style="font-family:'DM Serif Display',serif; font-style:italic; color:var(--accent)">something</em><br />together.
+    </h2>
+    <p class="reveal" style="color:var(--muted); font-size:1rem; max-width:38ch; margin-top:1rem;">
+      Open to senior backend, distributed systems, platform engineering, and technical lead opportunities — remote or
+      Nairobi-based.
+    </p>
+  </div>
+  <div class="contact-links reveal">
+    <a class="contact-link" href="mailto:sgatharikih@gmail.com">
+      <span class="cl-icon">EMAIL</span>
+      sgatharikih@gmail.com
+    </a>
+    <a class="contact-link" href="https://linkedin.com/in/gatharikih" target="_blank" rel="noopener">
+      <span class="cl-icon">LINKEDIN</span>
+      linkedin.com/in/gatharikih
+    </a>
+    <a class="contact-link" href="https://github.com/Gatharikih" target="_blank" rel="noopener">
+      <span class="cl-icon">GITHUB</span>
+      github.com/Gatharikih
+    </a>
+    <a class="contact-link" href="https://hashnode.com/@gatharikih" target="_blank" rel="noopener">
+      <span class="cl-icon">BLOG</span>
+      hashnode.com/@gatharikih
+    </a>
+    <a class="contact-link"
+       href="https://raw.githubusercontent.com/Gatharikih/Gatharikih.github.io/master/NGIGI%20SIMON%20GATHARIKI%20CV.pdf"
+       target="_blank" rel="noopener">
+      <span class="cl-icon">CV</span>
+      Download Résumé (PDF)
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <span class="footer-sig">
+      <svg class="sig-mark" viewBox="0 0 62 24" aria-hidden="true">
+        <path class="sketch"
+              d="M2 17c1.5-3.5 3.8-6.4 6-6 2.3.4 1.7 5.6-.6 6.4-2.6.9-3.4-3.6-.6-5.8 3-2.4 7.7-3 10.6-1 2.4 1.7 1.6 5.8-1.2 6.4 4 1.4 8.6-.2 10.8-3.3 1.6-2.2 4-2.8 5.3-1 1.2 1.7-.2 4.3-2.3 4.3h9" />
+      </svg>
+      <span>© <span id="year"></span> Gatharĩki Ngigĩ · Nairobi, Kenya</span>
+    </span>
+  <span>Backend Engineer · Technical Lead · Platform Engineering</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.getElementById('themeToggle');
+  const icon = toggle.querySelector('.toggle-icon');
+  const label = toggle.querySelector('.toggle-label');
+  const html = document.documentElement;
+
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    icon.textContent = '☽';
+    label.textContent = 'DARK';
+  }
+
+  toggle.addEventListener('click', () => {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      icon.textContent = '☀︎';
+      label.textContent = 'LIGHT';
+      localStorage.setItem('theme', 'light');
+    } else {
       html.setAttribute('data-theme', 'dark');
       icon.textContent = '☽';
       label.textContent = 'DARK';
+      localStorage.setItem('theme', 'dark');
     }
+  });
 
-    toggle.addEventListener('click', () => {
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        html.removeAttribute('data-theme');
-        icon.textContent = '☀︎';
-        label.textContent = 'LIGHT';
-        localStorage.setItem('theme', 'light');
-      } else {
-        html.setAttribute('data-theme', 'dark');
-        icon.textContent = '☽';
-        label.textContent = 'DARK';
-        localStorage.setItem('theme', 'dark');
+  // ── HAMBURGER MENU ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // ── ACTIVE NAV ON SCROLL ──
+  const sections = document.querySelectorAll('section[id], .hero');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id || 'home';
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
       }
     });
+  }, { threshold: 0.4 });
 
-    // ── HAMBURGER MENU ──
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
+  sections.forEach(s => sectionObserver.observe(s));
 
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
+  // ── BACK TO TOP ──
+  const backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 600);
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ── SCROLL REVEAL ──
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
+      }
     });
+  }, { threshold: 0.12 });
 
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-      });
-    });
-
-    // ── ACTIVE NAV ON SCROLL ──
-    const sections = document.querySelectorAll('section[id], .hero');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const id = e.target.id || 'home';
-          navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-          });
-        }
-      });
-    }, { threshold: 0.4 });
-
-    sections.forEach(s => sectionObserver.observe(s));
-
-    // ── BACK TO TOP ──
-    const backToTop = document.getElementById('backToTop');
-
-    window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('visible', window.scrollY > 600);
-    });
-
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // ── SCROLL REVEAL ──
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          revealObserver.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-  </script>
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
 </body>
 
 </html>
