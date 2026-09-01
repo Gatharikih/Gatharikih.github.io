@@ -46,6 +46,7 @@
       --pencil: #4a4438;
       --pencil-soft: #8f8672;
       --pencil2: #5b7a9e;
+      --sky-fill: rgba(151, 125, 88, 0.14);
     }
 
     [data-theme="dark"] {
@@ -66,6 +67,7 @@
       --pencil: #c9c2b2;
       --pencil-soft: #746c5a;
       --pencil2: #7fa3cc;
+      --sky-fill: rgba(255, 255, 255, 0.055);
     }
 
     *,
@@ -119,6 +121,12 @@
       font-weight: 600;
       color: var(--pencil2);
       line-height: 1.3;
+    }
+
+    .contact-note {
+      font-size: 1.4rem;
+      transform: rotate(-2deg);
+      margin: -0.4rem 0 1.2rem 0.15rem;
     }
 
     /* ── NAV ── */
@@ -343,14 +351,35 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       padding-top: 5rem;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-left {
+      position: relative;
+      z-index: 1;
       padding: 6rem 4rem 4rem 6rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       border-right: 1px solid var(--border);
+    }
+
+    .hero-skyline {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 130px;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.9;
+    }
+
+    .hero-skyline path,
+    .hero-skyline ellipse {
+      fill: var(--sky-fill);
     }
 
     .hero-tag {
@@ -471,6 +500,8 @@
     }
 
     .hero-right {
+      position: relative;
+      z-index: 1;
       padding: 6rem 4rem 4rem;
       display: flex;
       flex-direction: column;
@@ -546,10 +577,27 @@
 
     /* ── ABOUT ── */
     #about {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 6rem;
       align-items: start;
+    }
+
+    .torn-edge {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      width: 100%;
+      height: 26px;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .torn-edge path {
+      fill: var(--exp-bg);
+      transition: fill 0.3s ease;
     }
 
     .about-body {
@@ -588,6 +636,18 @@
 
     .meta-icon .sketch {
       stroke: var(--pencil);
+    }
+
+    .meta-icon .wash {
+      opacity: 0.17;
+    }
+
+    .meta-icon .wash-a {
+      fill: var(--accent);
+    }
+
+    .meta-icon .wash-b {
+      fill: var(--pencil2);
     }
 
     .meta-item .meta-key {
@@ -871,11 +931,19 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      transition: background 0.2s;
+      position: relative;
+      transition: background 0.2s, transform 0.28s ease, box-shadow 0.28s ease;
     }
 
     .project-card:hover {
       background: var(--cream);
+      transform: translateY(-5px) rotate(-0.35deg);
+      box-shadow: 0 16px 28px -14px rgba(0, 0, 0, 0.28);
+      z-index: 2;
+    }
+
+    .project-card:nth-of-type(even):hover {
+      transform: translateY(-5px) rotate(0.35deg);
     }
 
     .project-card .project-tags {
@@ -915,6 +983,29 @@
       font-family: 'DM Serif Display', serif;
       font-size: 1.3rem;
       line-height: 1.2;
+    }
+
+    .project-title-row {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .route-doodle {
+      width: 32px;
+      height: 18px;
+      flex-shrink: 0;
+      overflow: visible;
+    }
+
+    .route-doodle .sketch {
+      stroke: var(--pencil2);
+      stroke-width: 1.5;
+      stroke-dasharray: 2.8 3.2;
+    }
+
+    .route-doodle .plane {
+      fill: var(--pencil2);
     }
 
     .project-desc {
@@ -1365,6 +1456,11 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
+  <svg class="hero-skyline" viewBox="0 0 1400 130" preserveAspectRatio="none" aria-hidden="true">
+    <path
+            d="M0,130 L0,82 L46,82 L46,58 L92,58 L92,96 L132,96 L132,34 L146,34 L146,17 L163,17 L163,35 L179,35 L179,100 L217,100 L217,68 L252,68 L252,106 L292,106 L292,46 L302,46 L302,22 L314,22 L314,47 L324,47 L324,102 L362,102 L362,73 L402,73 L402,111 L442,111 L442,50 L472,50 L472,88 L507,88 L507,28 L542,28 L542,100 L582,100 L582,61 L617,61 L617,105 L662,105 L662,39 L670,39 L670,14 L684,14 L684,41 L694,41 L694,109 L732,109 L732,76 L767,76 L767,113 L802,113 L802,53 L832,53 L832,94 L867,94 L867,33 L902,33 L902,102 L942,102 L942,64 L977,64 L977,108 L1017,108 L1017,47 L1047,47 L1047,86 L1082,86 L1082,22 L1090,22 L1090,9 L1102,9 L1102,24 L1112,24 L1112,97 L1152,97 L1152,66 L1192,66 L1192,106 L1232,106 L1232,49 L1262,49 L1262,90 L1297,90 L1297,31 L1332,31 L1332,101 L1372,101 L1372,73 L1400,73 L1400,130 Z" />
+    <ellipse cx="154.5" cy="14" rx="17" ry="5.5" />
+  </svg>
   <div class="hero-left">
     <p class="hero-tag">Backend Engineer &amp; Technical Lead · Nairobi, Kenya</p>
     <h1 class="hero-name">
@@ -1425,6 +1521,7 @@
   <div class="about-meta reveal">
     <div class="meta-item">
       <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="wash wash-a" d="M14 2.7c6.3 0 11.3 4.6 11.1 10.7-.2 6-5.2 10.9-11.5 10.7C7.5 23.9 2.8 18.9 3 12.9 3.2 6.9 8 2.7 14 2.7Z" />
         <path class="sketch" d="M4.5 6.3c0-1.2 1-2 2.2-1.9h14.6c1.2 0 2.2.9 2.1 2.1l-.2 15c-.1 1.1-1 1.9-2.1 1.9H6.8c-1.2 0-2.2-.9-2.2-2.1Z" />
         <path class="sketch" d="M8.5 12.2 12 15l-3.7 3" />
         <path class="sketch" d="M14 18.3h5.6" />
@@ -1436,6 +1533,7 @@
     </div>
     <div class="meta-item">
       <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="wash wash-b" d="M14 2.7c6.3 0 11.3 4.6 11.1 10.7-.2 6-5.2 10.9-11.5 10.7C7.5 23.9 2.8 18.9 3 12.9 3.2 6.9 8 2.7 14 2.7Z" />
         <path class="sketch" d="M14 3.8 24.6 9 14 14.2 3.4 9Z" />
         <path class="sketch" d="M7.5 12.3 3.4 14.3 14 19.5l10.6-5.2-4.1-2" />
         <path class="sketch" d="M7.5 17.6 3.4 19.6 14 24.8l10.6-5.2-4.1-2" />
@@ -1447,6 +1545,7 @@
     </div>
     <div class="meta-item">
       <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="wash wash-a" d="M14 2.7c6.3 0 11.3 4.6 11.1 10.7-.2 6-5.2 10.9-11.5 10.7C7.5 23.9 2.8 18.9 3 12.9 3.2 6.9 8 2.7 14 2.7Z" />
         <path class="sketch" d="M11.4 6.2 3.6 14l7.8 7.8" />
         <path class="sketch" d="M16.6 6.2 24.4 14l-7.8 7.8" />
       </svg>
@@ -1457,6 +1556,7 @@
     </div>
     <div class="meta-item">
       <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="wash wash-b" d="M14 2.7c6.3 0 11.3 4.6 11.1 10.7-.2 6-5.2 10.9-11.5 10.7C7.5 23.9 2.8 18.9 3 12.9 3.2 6.9 8 2.7 14 2.7Z" />
         <path class="sketch" d="M14 4.6 25.4 9.8 14 15 2.6 9.8Z" />
         <path class="sketch" d="M8 12.3v6.1c0 1.9 2.7 3.3 6 3.3s6-1.4 6-3.3v-6.1" />
         <path class="sketch" d="M25.4 9.8v7" />
@@ -1468,6 +1568,7 @@
     </div>
     <div class="meta-item">
       <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="wash wash-a" d="M14 2.7c6.3 0 11.3 4.6 11.1 10.7-.2 6-5.2 10.9-11.5 10.7C7.5 23.9 2.8 18.9 3 12.9 3.2 6.9 8 2.7 14 2.7Z" />
         <path class="sketch" d="M14 4.3a6.6 6.6 0 1 1-.15 0Z" />
         <path class="sketch" d="M10.3 15.6 8.4 23.7l4-2.1 2 3 2-3 4 2.1-1.9-8.2" />
       </svg>
@@ -1478,6 +1579,7 @@
     </div>
     <div class="meta-item">
       <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="wash wash-b" d="M14 2.7c6.3 0 11.3 4.6 11.1 10.7-.2 6-5.2 10.9-11.5 10.7C7.5 23.9 2.8 18.9 3 12.9 3.2 6.9 8 2.7 14 2.7Z" />
         <path class="sketch" d="M14 3.6a10 10 0 1 1-.2 0Z" />
         <path class="sketch" d="M14 8.6 17 14l-3 5.4-3-5.4Z" />
       </svg>
@@ -1488,6 +1590,7 @@
     </div>
     <div class="meta-item">
       <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
+        <path class="wash wash-a" d="M14 2.7c6.3 0 11.3 4.6 11.1 10.7-.2 6-5.2 10.9-11.5 10.7C7.5 23.9 2.8 18.9 3 12.9 3.2 6.9 8 2.7 14 2.7Z" />
         <path class="sketch" d="M6 22.6 19.8 8.8l2.9 2.9L8.9 25.5l-4 1.1Z" />
         <path class="sketch" d="M18 10.6l2.9 2.9" />
         <path class="sketch" d="M4.9 26.6 6 22.6l2.9 2.9Z" />
@@ -1498,6 +1601,10 @@
       </div>
     </div>
   </div>
+  <svg class="torn-edge" viewBox="0 0 1400 26" preserveAspectRatio="none" aria-hidden="true">
+    <path
+            d="M0,26 L0,14 L40,18 L80,8 L120,16 L160,6 L200,15 L240,9 L280,17 L320,5 L360,14 L400,8 L440,16 L480,6 L520,15 L560,9 L600,17 L640,5 L680,14 L720,8 L760,16 L800,6 L840,15 L880,9 L920,17 L960,5 L1000,14 L1040,8 L1080,16 L1120,6 L1160,15 L1200,9 L1240,17 L1280,5 L1320,14 L1360,8 L1400,14 L1400,26 Z" />
+  </svg>
 </section>
 
 <!-- EXPERIENCE -->
@@ -1779,7 +1886,12 @@
 
     <div class="project-card reveal">
       <span class="project-num">03</span>
-      <h3 class="project-title">Cross-Border Payments Engine</h3>
+      <h3 class="project-title project-title-row">Cross-Border Payments Engine
+        <svg class="route-doodle" viewBox="0 0 34 20" aria-hidden="true">
+          <path class="sketch" fill="none" d="M2 16c6-9 14-14 22-13 3 .3 6 1.5 8 3" />
+          <path class="plane" d="M28 3.2 34 5.4 28.4 7 27 10.6 25.6 7 20.8 6.1Z" />
+        </svg>
+      </h3>
       <p class="project-desc">Architected and integrated multi-corridor cross-border payment rails across Ethiopia,
         Tanzania, Uganda, India, Japan, and China — expanding payout reach with mobile money and bank transfer
         terminations.</p>
@@ -1842,6 +1954,7 @@
     </p>
   </div>
   <div class="contact-links reveal">
+    <p class="hand-note contact-note">usually replies within a day</p>
     <a class="contact-link" href="mailto:sgatharikih@gmail.com">
       <span class="cl-icon">EMAIL</span>
       sgatharikih@gmail.com
