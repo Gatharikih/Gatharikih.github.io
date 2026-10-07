@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" id="themeColorMeta" content="#f5f2eb" />
   <title>Gatharĩki Ngigĩ (Simon Gathariki) — Backend Engineer & Technical Lead</title>
   <meta name="description"
         content="Gatharĩki Ngigĩ (Simon Gathariki) — Software Engineer and Technical Lead with 5+ years building scalable backend systems, distributed pipelines, and payment infrastructure. Based in Nairobi, Kenya." />
@@ -15,11 +16,13 @@
         content="Gatharĩki Ngigĩ (Simon Gathariki) — 5+ years building scalable backend systems, distributed pipelines, and cross-border payment infrastructure. Open to senior backend, platform engineering, and technical lead roles." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gatharikih.github.io" />
+  <meta property="og:image" content="https://gatharikih.github.io/og-image.png" />
   <link rel="canonical" href="https://gatharikih.github.io" />
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Gatharĩki Ngigĩ (Simon Gathariki) — Backend Engineer & Technical Lead" />
   <meta name="twitter:description"
         content="Gatharĩki Ngigĩ (Simon Gathariki) — 5+ years building scalable backend systems, distributed pipelines, and cross-border payment infrastructure." />
+  <meta name="twitter:image" content="https://gatharikih.github.io/og-image.png" />
   <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d0f14'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia%2C serif' font-size='13' font-weight='bold' fill='%23c84b2f' letter-spacing='-0.5'%3ESG%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -548,6 +551,150 @@
       font-size: 0.88rem;
       color: var(--muted);
       line-height: 1.4;
+    }
+
+    /* ── LIVE STATUS BADGE ── */
+    .live-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.35rem 0.85rem;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+      width: fit-content;
+      flex-wrap: wrap;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #2e7d32;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7);
+      animation: pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+      0% {
+        box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 6px rgba(46, 125, 50, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(46, 125, 50, 0);
+      }
+    }
+
+    /* ── POLAROID / AVATAR CARD ── */
+    .hero-polaroid {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 0.85rem 0.85rem 1.1rem;
+      border-radius: 4px;
+      box-shadow: 0 10px 25px -10px rgba(0,0,0,0.15);
+      transform: rotate(-1.8deg);
+      transition: transform 0.3s ease;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeLeft 0.6s 0.2s forwards;
+    }
+
+    .hero-polaroid:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    .polaroid-frame {
+      width: 100%;
+      height: 120px;
+      background: linear-gradient(135deg, #1c2331 0%, #0d0f14 100%);
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #f5f2eb;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .polaroid-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(200, 75, 47, 0.25), transparent 70%);
+      pointer-events: none;
+    }
+
+    .avatar-initials {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.6rem;
+      color: var(--accent);
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .avatar-sub {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      margin-top: 0.3rem;
+    }
+
+    .polaroid-caption {
+      text-align: center;
+      font-size: 1.15rem;
+      margin-top: 0.5rem;
+      color: var(--ink);
+    }
+
+    /* ── WORKBENCH & FIELD NOTES ── */
+    .workbench-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .wb-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.35rem;
+      position: relative;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .wb-card:hover {
+      transform: translateY(-3px);
+      background: var(--cream);
+    }
+
+    .wb-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .wb-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .wb-desc {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     /* ── SECTION COMMONS ── */
@@ -1473,7 +1620,13 @@
     <ellipse cx="154.5" cy="14" rx="17" ry="5.5" />
   </svg>
   <div class="hero-left">
-    <p class="hero-tag">Backend Engineer &amp; Technical Lead · Nairobi, Kenya</p>
+    <div class="live-status">
+      <span class="status-dot"></span>
+      <span id="nairobiClock">Nairobi, Kenya · EAT</span>
+      <span style="opacity:0.35;">|</span>
+      <span>Open for Tech Lead &amp; Senior Backend Roles</span>
+    </div>
+    <p class="hero-tag">Backend Engineer &amp; Technical Lead</p>
     <h1 class="hero-name">
       <a href="https://www.linkedin.com/in/gatharikih/" target="_blank" rel="noopener"
          style="text-decoration:none; color:inherit;">Gatharĩki</a><br />
@@ -1486,8 +1639,10 @@
         </span>
     </h1>
     <p class="hero-desc">
-      Building scalable backend systems, distributed pipelines, and high-availability APIs
-      that deliver real business impact — end-to-end ownership, cross-timezone collaboration.
+      I engineer backend architectures that stay resilient when traffic spikes. From handling <strong>4,333 transactions per minute</strong> to building financial AML platforms and cross-border payment rails across East Africa and Asia, I care about performance, robust systems, and clear technical leadership.
+    </p>
+    <p class="hand-note" style="font-size:1.35rem; transform:rotate(-1.5deg); margin:-1.75rem 0 2.25rem 0.15rem; color:var(--pencil2);">
+      ✎ "If it can fail in production at 2 AM, design it to self-heal."
     </p>
     <div class="hero-cta">
       <a href="#experience" class="btn btn-primary">View Experience</a>
@@ -1495,6 +1650,13 @@
     </div>
   </div>
   <div class="hero-right">
+    <div class="hero-polaroid">
+      <div class="polaroid-frame">
+        <span class="avatar-initials">GN</span>
+        <span class="avatar-sub">Nairobi · Technical Lead</span>
+      </div>
+      <p class="hand-note polaroid-caption">Gatharĩki Ngigĩ — Software Engineer</p>
+    </div>
     <div class="stat-card">
       <span class="stat-num">5+</span>
       <span class="stat-label">Years building &amp; operating<br />production backend systems</span>
@@ -1520,13 +1682,9 @@
     <p class="section-label">01 — About</p>
     <h2 class="section-title reveal">Engineering systems<br />that hold under pressure</h2>
     <div class="about-body reveal">
-      <p>I'm a Software Engineer and Technical Lead with over five years of experience designing backend systems,
-        distributed architectures, and data pipelines that run reliably in production.</p>
-      <p>My work spans <strong>payment infrastructure, AML compliance platforms, observability systems, and API
-        gateways</strong> — always with a focus on measurable performance, maintainability, and cross-functional
-        clarity.</p>
-      <p>I'm comfortable owning systems from design to deployment, driving architectural decisions, and communicating
-        complex tradeoffs to product and business stakeholders alike.</p>
+      <p>I'm a Software Engineer and Technical Lead with over five years of experience designing backend systems, distributed architectures, and payment pipelines that run reliably in production.</p>
+      <p>My work spans <strong>payment infrastructure, AML compliance platforms, observability systems, and high-concurrency API gateways</strong> — always with a focus on measurable performance, maintainability, and cross-functional clarity.</p>
+      <p>I believe great engineering is as much about clear communication and team alignment as it is about thread locks and database indexes. Outside of production code, I'm a hands-on builder passionate about hardware, sketching, and systems craft.</p>
     </div>
   </div>
   <div class="about-meta reveal">
@@ -1588,10 +1746,14 @@
         <div class="meta-val credly-badges">
           <div data-iframe-width="150" data-iframe-height="270"
                data-share-badge-id="65d03828-3fdf-4f2c-a90f-0c97b6c4a1ca"
-               data-share-badge-host="https://www.credly.com"></div>
+               data-share-badge-host="https://www.credly.com">
+            <a href="https://www.credly.com/badges/65d03828-3fdf-4f2c-a90f-0c97b6c4a1ca/public_url" target="_blank" rel="noopener" class="tag" style="text-decoration:none; display:inline-block;">View Credly Badge 1 ↗</a>
+          </div>
           <div data-iframe-width="150" data-iframe-height="270"
                data-share-badge-id="e8c7615d-430d-4dee-a5b1-f053073d6a78"
-               data-share-badge-host="https://www.credly.com"></div>
+               data-share-badge-host="https://www.credly.com">
+            <a href="https://www.credly.com/badges/e8c7615d-430d-4dee-a5b1-f053073d6a78/public_url" target="_blank" rel="noopener" class="tag" style="text-decoration:none; display:inline-block;">View Credly Badge 2 ↗</a>
+          </div>
         </div>
       </div>
     </div>
@@ -1606,18 +1768,33 @@
         <p class="meta-val">Nairobi, Kenya · Open to remote &amp; distributed teams</p>
       </div>
     </div>
-    <div class="meta-item">
-      <svg class="meta-icon" viewBox="0 0 28 28" aria-hidden="true">
-        <path class="wash wash-a" d="M14 2.7c6.3 0 11.3 4.6 11.1 10.7-.2 6-5.2 10.9-11.5 10.7C7.5 23.9 2.8 18.9 3 12.9 3.2 6.9 8 2.7 14 2.7Z" />
-        <path class="sketch" d="M6 22.6 19.8 8.8l2.9 2.9L8.9 25.5l-4 1.1Z" />
-        <path class="sketch" d="M18 10.6l2.9 2.9" />
-        <path class="sketch" d="M4.9 26.6 6 22.6l2.9 2.9Z" />
-      </svg>
-      <div>
-        <p class="meta-key">Off the Clock</p>
-        <p class="meta-val">Colored-pencil sketching, drone motor rebuilds &amp; reviving old Android phones</p>
+  </div>
+
+  <div style="grid-column: 1 / -1; margin-top: 1rem;" class="reveal">
+    <p class="section-label">Field Notes &amp; Personal Workbench</p>
+    <div class="workbench-grid">
+      <div class="wb-card">
+        <div class="wb-icon">🚁</div>
+        <p class="wb-title">Hardware &amp; Drone Building</p>
+        <p class="wb-desc">Soldering desk tinkering, rebuilding drone ESC motor drivers, and tuning telemetry controllers.</p>
+      </div>
+      <div class="wb-card">
+        <div class="wb-icon">📱</div>
+        <p class="wb-title">Legacy Device Hacking</p>
+        <p class="wb-desc">Flashing custom Android ROMs, kernel tweaking, and reviving old mobile hardware for custom edge nodes.</p>
+      </div>
+      <div class="wb-card">
+        <div class="wb-icon">✏️</div>
+        <p class="wb-title">Visual Craft &amp; Sketching</p>
+        <p class="wb-desc">Hand-drawn colored-pencil architectural blueprints, technical diagramming, and freehand drawing.</p>
+      </div>
+      <div class="wb-card">
+        <div class="wb-icon">📖</div>
+        <p class="wb-title">Currently Reading</p>
+        <p class="wb-desc"><em>Designing Data-Intensive Applications</em> by Martin Kleppmann &amp; Kafka event-sourcing guides.</p>
       </div>
     </div>
+  </div>
   </div>
   <svg class="torn-edge" viewBox="0 0 1400 26" preserveAspectRatio="none" aria-hidden="true">
     <path
@@ -1868,8 +2045,11 @@
 
 <!-- PROJECTS -->
 <section id="projects">
-  <p class="section-label">04 — Notable Work</p>
-  <h2 class="section-title reveal">Selected Projects</h2>
+  <p class="section-label">04 — Selected Engineering Work</p>
+  <h2 class="section-title reveal">Production Systems &amp; Case Studies</h2>
+  <p class="hand-note reveal" style="font-size: 1.35rem; transform: rotate(-1deg); margin: -1.75rem 0 2rem; color: var(--pencil2);">
+    ✎ Real production challenges, architected &amp; solved under peak traffic.
+  </p>
   <div class="projects-grid">
     <svg class="projects-pin" viewBox="0 0 30 46" aria-hidden="true">
       <path class="sketch" fill="none"
@@ -1879,23 +2059,19 @@
     <div class="project-card reveal">
       <span class="project-num">01</span>
       <h3 class="project-title">AML Compliance Platform</h3>
-      <p class="project-desc">Full-stack financial crime detection platform covering customer screening, real-time
-        transaction monitoring, risk scoring, investigations workflow, and regulatory reporting. Includes custom rules
-        engine and alerting pipelines.</p>
+      <p class="project-desc">Architected a full-stack financial crime screening &amp; monitoring platform from scratch. Built real-time customer screening, transaction monitoring algorithms, custom risk scoring, and automated regulatory reporting with zero dropped alert events.</p>
       <div class="project-tags">
         <span class="ptag">Java</span><span class="ptag">Spring Boot</span><span class="ptag">Kafka</span><span
               class="ptag">PostgreSQL</span><span class="ptag">AML</span>
       </div>
-      <a class="project-link" href="https://scytalesystems.tech/aml-platform" target="_blank" rel="noopener">View
+      <a class="project-link" href="https://scytalesystems.tech/aml-platform" target="_blank" rel="noopener" aria-label="View AML Compliance Platform live site">View
         Live</a>
     </div>
 
     <div class="project-card reveal">
       <span class="project-num">02</span>
       <h3 class="project-title">OpenSearch Observability Platform</h3>
-      <p class="project-desc">Designed and deployed a full observability stack on OpenSearch to replace Dynatrace —
-        delivering equivalent visibility at a fraction of the cost. Included log aggregation, alerting, and custom
-        dashboards.</p>
+      <p class="project-desc">Dynatrace monitoring bills were escalating rapidly. Designed &amp; deployed a full OpenSearch observability architecture with custom log pipelines, log aggregation, and real-time alerting — slashing observability costs while preserving 100% system visibility.</p>
       <div class="project-tags">
         <span class="ptag">OpenSearch</span><span class="ptag">ELK</span><span class="ptag">Monitoring</span><span
               class="ptag">AWS</span>
@@ -1910,50 +2086,44 @@
           <path class="plane" d="M28 3.2 34 5.4 28.4 7 27 10.6 25.6 7 20.8 6.1Z" />
         </svg>
       </h3>
-      <p class="project-desc">Architected and integrated multi-corridor cross-border payment rails across Ethiopia,
-        Tanzania, Uganda, India, Japan, and China — expanding payout reach with mobile money and bank transfer
-        terminations.</p>
+      <p class="project-desc">Architected multi-corridor cross-border payment rails connecting Kenya, Ethiopia, Tanzania, Uganda, India, Japan, and China. Built resilient mobile money payout terminations handling real-time currency settlement.</p>
       <div class="project-tags">
         <span class="ptag">Java</span><span class="ptag">REST APIs</span><span class="ptag">Fintech</span><span
               class="ptag">Mobile Money</span>
       </div>
-      <a class="project-link" href="https://www.upesi.co.ke/" target="_blank" rel="noopener">View Live</a>
+      <a class="project-link" href="https://www.upesi.co.ke/" target="_blank" rel="noopener" aria-label="View Cross-Border Payments Engine live site">View Live</a>
     </div>
 
     <div class="project-card reveal">
       <span class="project-num">04</span>
       <h3 class="project-title">API Gateway Migration</h3>
-      <p class="project-desc">Led end-to-end migration of core API gateway from Javalin to Spring Boot. Improved
-        throughput from under 1,000 to 4,333 TPM and slashed worst-case TAT from 30 minutes to under 50 seconds.</p>
+      <p class="project-desc">The legacy Javalin gateway chokepoint was creating 30-minute worst-case delays during holiday traffic spikes. Led full gateway re-architecture to Spring Boot, boosting throughput to 4,333 TPM and cutting turnaround latency under 50 seconds.</p>
       <div class="project-tags">
         <span class="ptag">Spring Boot</span><span class="ptag">Javalin</span><span
               class="ptag">Performance</span><span class="ptag">Microservices</span>
       </div>
-      <a class="project-link" href="https://www.upesi.co.ke/" target="_blank" rel="noopener">View Live</a>
+      <a class="project-link" href="https://www.upesi.co.ke/" target="_blank" rel="noopener" aria-label="View API Gateway Migration project live site">View Live</a>
     </div>
 
     <div class="project-card reveal">
       <span class="project-num">05</span>
       <h3 class="project-title">University Internal Platforms</h3>
-      <p class="project-desc">Built a suite of internal web platforms including contract management, student
-        onboarding portals, leave tracking, and LMS analytics dashboards. Also supported Moodle e-learning
-        infrastructure.</p>
+      <p class="project-desc">Designed and shipped operational web tools for campus operations, contract tracking, student onboarding portals, and Moodle LMS analytics dashboards serving thousands of active students and faculty.</p>
       <div class="project-tags">
         <span class="ptag">Node.js</span><span class="ptag">MySQL</span><span class="ptag">Moodle</span><span
               class="ptag">Web Apps</span>
       </div>
-      <a class="project-link" href="https://apps.embuni.ac.ke/" target="_blank" rel="noopener">View Live</a>
+      <a class="project-link" href="https://apps.embuni.ac.ke/" target="_blank" rel="noopener" aria-label="View University Internal Platforms live site">View Live</a>
     </div>
 
     <div class="project-card reveal">
       <span class="project-num">06</span>
       <h3 class="project-title">Mobile Payment Application</h3>
-      <p class="project-desc">Developed a mobile payment application for a trading platform at Rivest Enterprises,
-        alongside school management systems that improved operational efficiency and real-time communication.</p>
+      <p class="project-desc">Developed a mobile payment application for a trading ecosystem at Rivest Enterprises, alongside school management tools that streamlined operational workflows and real-time parent notifications.</p>
       <div class="project-tags">
         <span class="ptag">Mobile</span><span class="ptag">Payments</span><span class="ptag">Java</span>
       </div>
-      <a class="project-link" href="https://app.abepayy.com/" target="_blank" rel="noopener">View Live</a>
+      <a class="project-link" href="https://app.abepayy.com/" target="_blank" rel="noopener" aria-label="View Mobile Payment Application live site">View Live</a>
     </div>
 
   </div>
@@ -2017,11 +2187,34 @@
   const label = toggle.querySelector('.toggle-label');
   const html = document.documentElement;
 
+  function updateNairobiClock() {
+    try {
+      const options = { timeZone: 'Africa/Nairobi', hour: '2-digit', minute: '2-digit', hour12: true };
+      const timeStr = new Intl.DateTimeFormat('en-US', options).format(new Date());
+      const el = document.getElementById('nairobiClock');
+      if (el) el.textContent = `Nairobi, Kenya · ${timeStr} EAT`;
+    } catch(e) {}
+  }
+  updateNairobiClock();
+  setInterval(updateNairobiClock, 30000);
+
   const saved = localStorage.getItem('theme');
-  if (saved === 'dark') {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const themeColorMeta = document.getElementById('themeColorMeta');
+
+  function updateThemeColor(isDark) {
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute('content', isDark ? '#111318' : '#f5f2eb');
+    }
+  }
+
+  if (saved === 'dark' || (!saved && prefersDark)) {
     html.setAttribute('data-theme', 'dark');
     icon.textContent = '☽';
     label.textContent = 'DARK';
+    updateThemeColor(true);
+  } else {
+    updateThemeColor(false);
   }
 
   toggle.addEventListener('click', () => {
@@ -2031,11 +2224,13 @@
       icon.textContent = '☀︎';
       label.textContent = 'LIGHT';
       localStorage.setItem('theme', 'light');
+      updateThemeColor(false);
     } else {
       html.setAttribute('data-theme', 'dark');
       icon.textContent = '☽';
       label.textContent = 'DARK';
       localStorage.setItem('theme', 'dark');
+      updateThemeColor(true);
     }
   });
 
