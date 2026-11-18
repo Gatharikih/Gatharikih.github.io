@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 150" fill="none">
+  <g stroke="#8f8672" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="16" y="54" width="54" height="34" rx="5"/>
+    <rect x="170" y="54" width="54" height="34" rx="5"/>
+    <rect x="93" y="24" width="54" height="30" rx="5" stroke="#5b7a9e"/>
+    <rect x="93" y="96" width="54" height="30" rx="5" stroke="#5b7a9e"/>
+    <path d="M70 71h23M147 39h23v32M147 111h23V88M70 71c10 0 14-16 23-32M70 71c10 0 14 16 23 40"/>
+  </g>
+  <g fill="#c84b2f" opacity="0.8">
+    <circle cx="43" cy="71" r="4"/>
+    <circle cx="197" cy="71" r="4"/>
+    <circle cx="120" cy="39" r="3.5"/>
+    <circle cx="120" cy="111" r="3.5"/>
+  </g>
+  <path d="M82 58l6 4-6 4M158 46l6 4-6 4M158 102l6 4-6 4" stroke="#c84b2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="28" y="76" font-family="Courier New, monospace" font-size="9" fill="#8f8672">PAY</text>
+  <text x="182" y="76" font-family="Courier New, monospace" font-size="9" fill="#8f8672">SETTLE</text>
+</svg>
