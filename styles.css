@@ -4,18 +4,18 @@
   --cream: #ede9df;
   --accent: #c84b2f;
   --accent2: #2f6bc8;
-  --muted: #6b6760;
+  --muted: #5f5b54;
   --border: #d4cfc6;
   --card: #ffffff;
   --nav-bg: rgba(245, 242, 235, 0.88);
   --exp-bg: #0d0f14;
   --exp-color: #f5f2eb;
   --exp-border: rgba(255, 255, 255, 0.1);
-  --exp-muted: rgba(255, 255, 255, 0.65);
-  --exp-bright: rgba(255, 255, 255, 0.9);
+  --exp-muted: rgba(255, 255, 255, 0.74);
+  --exp-bright: rgba(255, 255, 255, 0.92);
   --pencil: #4a4438;
   --pencil-soft: #8f8672;
-  --pencil2: #5b7a9e;
+  --pencil2: #4d6f93;
   --sky-fill: rgba(151, 125, 88, 0.14);
 }
 
@@ -25,18 +25,18 @@
   --cream: #1a1d24;
   --accent: #e05c3a;
   --accent2: #4a8de0;
-  --muted: #8a8680;
+  --muted: #9b978f;
   --border: #2a2d35;
   --card: #181b22;
   --nav-bg: rgba(17, 19, 24, 0.9);
   --exp-bg: #0a0c10;
   --exp-color: #e8e4db;
   --exp-border: rgba(255, 255, 255, 0.08);
-  --exp-muted: rgba(232, 228, 219, 0.6);
-  --exp-bright: rgba(232, 228, 219, 0.92);
+  --exp-muted: rgba(232, 228, 219, 0.74);
+  --exp-bright: rgba(232, 228, 219, 0.94);
   --pencil: #c9c2b2;
   --pencil-soft: #746c5a;
-  --pencil2: #7fa3cc;
+  --pencil2: #92b3d8;
   --sky-fill: rgba(255, 255, 255, 0.055);
 }
 
@@ -870,15 +870,15 @@ section+section {
 
 #skills {
   background-image:
-    linear-gradient(rgba(107, 103, 96, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(107, 103, 96, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(107, 103, 96, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(107, 103, 96, 0.045) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
 [data-theme="dark"] #skills {
   background-image:
-    linear-gradient(rgba(232, 228, 219, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232, 228, 219, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(232, 228, 219, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 228, 219, 0.03) 1px, transparent 1px);
 }
 
 #projects::before {
@@ -919,13 +919,16 @@ section+section {
   background-image:
     radial-gradient(circle at 15% 20%, rgba(200, 75, 47, 0.08), transparent 35%),
     radial-gradient(circle at 85% 80%, rgba(47, 107, 200, 0.08), transparent 30%),
-    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: auto, auto, 34px 34px;
-  opacity: 0.5;
+  opacity: 0.35;
   pointer-events: none;
 }
 
-#experience > *:not(.spot-illus) {
+#experience > *:not(.spot-illus),
+#skills > :not(.spot-illus),
+#projects > :not(.spot-illus),
+#contact > :not(.spot-illus) {
   position: relative;
   z-index: 1;
 }
@@ -961,8 +964,8 @@ section+section {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(107, 103, 96, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(107, 103, 96, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(107, 103, 96, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(107, 103, 96, 0.03) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black, transparent 75%);
   pointer-events: none;
@@ -970,8 +973,8 @@ section+section {
 
 [data-theme="dark"] #about::before {
   background-image:
-    linear-gradient(rgba(232, 228, 219, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232, 228, 219, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(232, 228, 219, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 228, 219, 0.025) 1px, transparent 1px);
 }
 
 #about > *:not(.spot-illus) {
@@ -2443,13 +2446,13 @@ footer {
   position: absolute;
   pointer-events: none;
   user-select: none;
-  opacity: 0.22;
+  opacity: 0.15;
   z-index: 0;
   filter: saturate(0.9);
 }
 
 [data-theme="dark"] .spot-illus {
-  opacity: 0.16;
+  opacity: 0.1;
   filter: saturate(0.85) brightness(1.05);
 }
 
@@ -2477,14 +2480,14 @@ footer {
   right: 4%;
   width: 180px;
   --rot: 8deg;
-  opacity: 0.18;
+  opacity: 0.12;
 }
 .spot-hero-nodes {
   bottom: 18%;
   left: 46%;
   width: 140px;
   --rot: -6deg;
-  opacity: 0.14;
+  opacity: 0.09;
 }
 
 /* About */
@@ -2493,7 +2496,7 @@ footer {
   bottom: 8%;
   width: 170px;
   --rot: 12deg;
-  opacity: 0.16;
+  opacity: 0.11;
 }
 
 /* Experience */
@@ -2502,10 +2505,10 @@ footer {
   right: 3%;
   width: 320px;
   --rot: 0deg;
-  opacity: 0.22;
+  opacity: 0.13;
 }
 [data-theme="dark"] .spot-exp-constellation {
-  opacity: 0.28;
+  opacity: 0.16;
 }
 
 /* Skills */
@@ -2514,14 +2517,14 @@ footer {
   right: 4%;
   width: 170px;
   --rot: -4deg;
-  opacity: 0.14;
+  opacity: 0.1;
 }
 .spot-skills-server {
   bottom: 6%;
   left: 2%;
   width: 150px;
   --rot: 6deg;
-  opacity: 0.12;
+  opacity: 0.08;
 }
 
 /* Projects */
@@ -2530,14 +2533,14 @@ footer {
   right: 2%;
   width: 180px;
   --rot: 5deg;
-  opacity: 0.12;
+  opacity: 0.08;
 }
 .spot-projects-plane {
   bottom: 3%;
   left: 1%;
   width: 170px;
   --rot: -8deg;
-  opacity: 0.14;
+  opacity: 0.09;
 }
 
 /* Contact */
@@ -2546,14 +2549,14 @@ footer {
   right: 6%;
   width: 140px;
   --rot: 7deg;
-  opacity: 0.18;
+  opacity: 0.12;
 }
 .spot-contact-plane {
   bottom: 10%;
   left: 42%;
   width: 150px;
   --rot: 10deg;
-  opacity: 0.14;
+  opacity: 0.09;
 }
 
 @media (max-width: 1100px) {
@@ -2567,7 +2570,10 @@ footer {
 
 @media (max-width: 700px) {
   .spot-illus {
-    opacity: 0.12;
+    opacity: 0.08;
+  }
+  [data-theme="dark"] .spot-illus {
+    opacity: 0.06;
   }
   .spot-hero-orbit,
   .spot-about-gear,
@@ -2602,16 +2608,16 @@ footer {
   left: 3%;
   width: 240px;
   --rot: -2deg;
-  opacity: 0.16;
+  opacity: 0.11;
 }
-[data-theme="dark"] .spot-hero-nairobi { opacity: 0.13; }
+[data-theme="dark"] .spot-hero-nairobi { opacity: 0.09; }
 
 .spot-about-acacia {
   top: 3.5rem;
   right: 3%;
   width: 180px;
   --rot: 3deg;
-  opacity: 0.17;
+  opacity: 0.11;
 }
 
 .spot-exp-robotarm {
@@ -2619,16 +2625,16 @@ footer {
   left: 1%;
   width: 190px;
   --rot: -6deg;
-  opacity: 0.16;
+  opacity: 0.11;
 }
-[data-theme="dark"] .spot-exp-robotarm { opacity: 0.2; }
+[data-theme="dark"] .spot-exp-robotarm { opacity: 0.14; }
 
 .spot-skills-drone {
   top: 48%;
   right: 1%;
   width: 170px;
   --rot: 8deg;
-  opacity: 0.14;
+  opacity: 0.1;
 }
 
 .spot-skills-circuit {
@@ -2636,7 +2642,7 @@ footer {
   right: 38%;
   width: 140px;
   --rot: -10deg;
-  opacity: 0.12;
+  opacity: 0.08;
 }
 
 .spot-projects-mpesa {
@@ -2644,7 +2650,7 @@ footer {
   left: -10px;
   width: 130px;
   --rot: -8deg;
-  opacity: 0.13;
+  opacity: 0.09;
 }
 
 .spot-projects-payrails {
@@ -2652,7 +2658,7 @@ footer {
   right: 1%;
   width: 190px;
   --rot: 4deg;
-  opacity: 0.12;
+  opacity: 0.08;
 }
 
 .spot-contact-acacia {
@@ -2660,7 +2666,7 @@ footer {
   right: 32%;
   width: 150px;
   --rot: 2deg;
-  opacity: 0.14;
+  opacity: 0.1;
 }
 
 @media (max-width: 1100px) {
@@ -2672,7 +2678,7 @@ footer {
 }
 
 @media (max-width: 700px) {
-  .spot-hero-nairobi { width: 170px; bottom: 7rem; left: 1%; opacity: 0.12; }
+  .spot-hero-nairobi { width: 170px; bottom: 7rem; left: 1%; opacity: 0.08; }
   .spot-about-acacia,
   .spot-exp-robotarm,
   .spot-skills-drone,
