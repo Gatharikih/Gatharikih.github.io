@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#ede9df"/>
+  <rect x="20" y="20" width="360" height="260" rx="8" fill="#f5f2eb" stroke="#d4cfc6"/>
+  <g stroke="#4a4438" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="70" y="60" width="260" height="150" rx="6"/>
+    <path d="M95 95h210M95 130h210M95 165h140" stroke="#5b7a9e"/>
+    <path d="M270 70l40-22 18 32-40 22z" stroke="#c84b2f"/>
+    <line x1="310" y1="48" x2="318" y2="62" stroke="#c84b2f"/>
+  </g>
+  <text x="200" y="272" text-anchor="middle" font-family="Courier New, monospace" font-size="16" fill="#6b6760">PHOTO: pencil / blueprint sketch</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.06 0"/>
+      <feBlend in="SourceGraphic" in2="noise" mode="multiply"/>
+    </filter>
+    <style>
+      .ink { fill: #0d0f14; }
+      .muted { fill: #6b6760; }
+      .accent { fill: #c84b2f; }
+      .accent-stroke { stroke: #c84b2f; }
+      .pencil { stroke: #8f8672; }
+      .blue { stroke: #2f6bc8; }
+      .serif { font-family: Georgia, 'Times New Roman', serif; }
+      .sans { font-family: 'Segoe UI', Arial, Helvetica, sans-serif; }
+      .mono { font-family: 'Courier New', Courier, monospace; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="#f5f2eb"/>
+  <g filter="url(#grain)" opacity="0.35">
+    <rect width="1200" height="630" fill="#f5f2eb"/>
+  </g>
+
+  <!-- subtle blueprint pipeline motif -->
+  <g opacity="0.22" fill="none" stroke-linecap="round">
+    <path class="pencil" stroke-width="2" d="M70 470 C 260 360, 420 560, 620 430 S 980 360, 1130 470"/>
+    <path class="blue" stroke-width="1.5" stroke-dasharray="6 8" d="M120 520 C 320 430, 520 520, 720 440 S 980 420, 1080 500"/>
+    <circle class="pencil" stroke-width="2" cx="160" cy="452" r="10"/>
+    <circle class="pencil" stroke-width="2" cx="430" cy="486" r="10"/>
+    <circle class="accent-stroke" stroke-width="2.5" cx="700" cy="430" r="12"/>
+    <circle class="pencil" stroke-width="2" cx="960" cy="438" r="10"/>
+  </g>
+
+  <g transform="translate(96, 150)">
+    <text class="serif ink" x="0" y="92" font-size="96" font-weight="700" letter-spacing="-1">Gatharĩki Ngigĩ</text>
+    <path class="accent-stroke" fill="none" stroke-width="7" stroke-linecap="round" d="M4 116 C 140 132, 320 132, 520 108" opacity="0.9"/>
+    <text class="sans ink" x="0" y="178" font-size="44" font-weight="600">Backend Engineer &amp; Technical Lead</text>
+    <text class="sans muted" x="0" y="232" font-size="30">Distributed Systems · Payments · AML Platforms · Nairobi, Kenya</text>
+
+    <g transform="translate(0, 292)">
+      <g transform="translate(0,0)">
+        <rect x="0" y="0" rx="6" ry="6" width="210" height="54" fill="#ede9df" stroke="#d4cfc6"/>
+        <text class="mono" x="105" y="35" text-anchor="middle" font-size="24" fill="#c84b2f" font-weight="700">4,333 TPM</text>
+      </g>
+      <g transform="translate(232,0)">
+        <rect x="0" y="0" rx="6" ry="6" width="190" height="54" fill="#ede9df" stroke="#d4cfc6"/>
+        <text class="mono" x="95" y="35" text-anchor="middle" font-size="24" fill="#0d0f14" font-weight="700">&lt;50s TAT</text>
+      </g>
+      <g transform="translate(444,0)">
+        <rect x="0" y="0" rx="6" ry="6" width="210" height="54" fill="#ede9df" stroke="#d4cfc6"/>
+        <text class="mono" x="105" y="35" text-anchor="middle" font-size="24" fill="#2f6bc8" font-weight="700">6+ corridors</text>
+      </g>
+    </g>
+  </g>
+
+  <text class="mono muted" x="96" y="585" font-size="22" letter-spacing="2">gatharikih.github.io</text>
+</svg>

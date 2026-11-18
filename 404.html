@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found — Gatharĩki Ngigĩ</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .not-found {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1.5rem 3rem;
+      text-align: center;
+    }
+    .not-found-inner {
+      max-width: 560px;
+    }
+    .nf-code {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(4rem, 12vw, 7rem);
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .nf-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      margin-bottom: 0.75rem;
+    }
+    .nf-desc {
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      font-size: 1rem;
+    }
+    .nf-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <main class="not-found">
+    <div class="not-found-inner">
+      <p class="nf-code">404</p>
+      <h1 class="nf-title">This page wandered off the route.</h1>
+      <p class="nf-desc">The link may be outdated, or the page may have moved. You can head back to the portfolio and find what you need.</p>
+      <div class="nf-actions">
+        <a href="/" class="btn btn-primary">Back to home</a>
+        <a href="/#contact" class="btn btn-outline">Contact</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    (function(){
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) document.documentElement.setAttribute('data-theme','dark');
+    })();
+  </script>
+</body>
+</html>

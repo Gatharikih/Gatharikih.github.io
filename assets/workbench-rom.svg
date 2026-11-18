@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#ede9df"/>
+  <rect x="20" y="20" width="360" height="260" rx="8" fill="#f5f2eb" stroke="#d4cfc6"/>
+  <g stroke="#4a4438" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="150" y="44" width="100" height="188" rx="16"/>
+    <rect x="164" y="72" width="72" height="118" rx="6" stroke="#5b7a9e"/>
+    <circle cx="200" cy="210" r="7"/>
+    <path d="M178 110l22 22-22 22M222 110l-22 22 22 22" stroke="#c84b2f"/>
+    <path d="M92 120h34M92 150h26M274 120h34M282 150h26" stroke="#8f8672"/>
+  </g>
+  <text x="200" y="272" text-anchor="middle" font-family="Courier New, monospace" font-size="16" fill="#6b6760">PHOTO: device / ROM hacking</text>
+</svg>
